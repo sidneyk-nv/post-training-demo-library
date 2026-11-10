@@ -1,0 +1,49 @@
+<svg width="848" height="330" viewBox="0 0 848 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+<text fill="#EF9100" fill-opacity="0.45" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="13.568" letter-spacing="0em"><tspan x="39.0754" y="109.921">prompt</tspan></text>
+<path d="M103.456 118.72H22.0481C17.3647 118.72 13.5681 122.517 13.5681 127.2V167.904C13.5681 172.587 17.3647 176.384 22.0481 176.384H103.456C108.139 176.384 111.936 172.587 111.936 167.904V127.2C111.936 122.517 108.139 118.72 103.456 118.72Z" stroke="#EF9100" stroke-width="2.544"/>
+<path opacity="0.3" d="M27.136 139.072H98.368" stroke="#EF9100" stroke-width="2.0352"/>
+<path opacity="0.3" d="M27.136 156.032H78.016" stroke="#EF9100" stroke-width="2.0352"/>
+<path d="M115.328 147.552H135.68" stroke="#EF9100" stroke-width="3.0528" stroke-linecap="round"/>
+<path d="M132.288 141.616L149.248 147.552L132.288 153.488V141.616Z" fill="#EF9100"/>
+<path d="M281.536 94.9761H166.208C158.714 94.9761 152.64 101.051 152.64 108.544V186.56C152.64 194.053 158.714 200.128 166.208 200.128H281.536C289.029 200.128 295.104 194.053 295.104 186.56V108.544C295.104 101.051 289.029 94.9761 281.536 94.9761Z" stroke="#EF9100" stroke-width="3.392"/>
+<text fill="#EF9100" fill-opacity="0.42" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="17.808" letter-spacing="0em"><tspan x="198.643" y="141.889">Model</tspan></text>
+<text fill="#EF9100" fill-opacity="0.28" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="13.568" font-style="italic" letter-spacing="0em"><tspan x="167.964" y="165.889">samples attempts</tspan></text>
+<path d="M298.496 147.552C332.416 147.552 332.416 54.272 362.944 54.272" stroke="#EF9100" stroke-width="2.544" stroke-linecap="round"/>
+<path d="M298.496 147.552H359.552" stroke="#EF9100" stroke-width="2.544" stroke-linecap="round"/>
+<path d="M298.496 147.552C332.416 147.552 332.416 240.832 362.944 240.832" stroke="#EF9100" stroke-width="2.544" stroke-linecap="round"/>
+<path d="M359.552 48.3359L373.12 54.2719L359.552 60.2079V48.3359Z" fill="#EF9100"/>
+<path d="M359.552 141.616L373.12 147.552L359.552 153.488V141.616Z" fill="#EF9100"/>
+<path d="M359.552 234.896L373.12 240.832L359.552 246.768V234.896Z" fill="#EF9100"/>
+<text fill="#EF9100" fill-opacity="0.45" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="13.568" letter-spacing="0em"><tspan x="386.038" y="18.3369">several attempts</tspan></text>
+<path d="M493.536 28.832H384.992C380.309 28.832 376.512 32.6287 376.512 37.312V71.232C376.512 75.9154 380.309 79.712 384.992 79.712H493.536C498.219 79.712 502.016 75.9154 502.016 71.232V37.312C502.016 32.6287 498.219 28.832 493.536 28.832Z" stroke="#EF9100" stroke-width="2.544" stroke-dasharray="6.78 5.09"/>
+<path opacity="0.3" d="M390.08 47.488H488.448" stroke="#EF9100" stroke-width="1.8656"/>
+<path opacity="0.3" d="M390.08 61.0559H451.136" stroke="#EF9100" stroke-width="1.8656"/>
+<path d="M493.536 122.112H384.992C380.309 122.112 376.512 125.908 376.512 130.592V164.512C376.512 169.195 380.309 172.992 384.992 172.992H493.536C498.219 172.992 502.016 169.195 502.016 164.512V130.592C502.016 125.908 498.219 122.112 493.536 122.112Z" stroke="#EF9100" stroke-width="2.544" stroke-dasharray="6.78 5.09"/>
+<path opacity="0.3" d="M390.08 140.768H488.448" stroke="#EF9100" stroke-width="1.8656"/>
+<path opacity="0.3" d="M390.08 154.336H461.312" stroke="#EF9100" stroke-width="1.8656"/>
+<path d="M493.536 215.392H384.992C380.309 215.392 376.512 219.188 376.512 223.872V257.792C376.512 262.475 380.309 266.272 384.992 266.272H493.536C498.219 266.272 502.016 262.475 502.016 257.792V223.872C502.016 219.188 498.219 215.392 493.536 215.392Z" stroke="#EF9100" stroke-width="2.544" stroke-dasharray="6.78 5.09"/>
+<path opacity="0.3" d="M390.08 234.048H488.448" stroke="#EF9100" stroke-width="1.8656"/>
+<path opacity="0.3" d="M390.08 247.616H444.352" stroke="#EF9100" stroke-width="1.8656"/>
+<path d="M505.408 54.272H552.896" stroke="#EF9100" stroke-width="2.544" stroke-linecap="round"/>
+<path d="M549.504 48.3359L563.072 54.2719L549.504 60.2079V48.3359Z" fill="#EF9100"/>
+<path d="M505.408 147.552H552.896" stroke="#EF9100" stroke-width="2.544" stroke-linecap="round"/>
+<path d="M549.504 141.616L563.072 147.552L549.504 153.488V141.616Z" fill="#EF9100"/>
+<path d="M505.408 240.832H552.896" stroke="#EF9100" stroke-width="2.544" stroke-linecap="round"/>
+<path d="M549.504 234.896L563.072 240.832L549.504 246.768V234.896Z" fill="#EF9100"/>
+<path d="M671.616 28.832H580.032C572.539 28.832 566.464 34.9066 566.464 42.4V252.704C566.464 260.197 572.539 266.272 580.032 266.272H671.616C679.11 266.272 685.184 260.197 685.184 252.704V42.4C685.184 34.9066 679.11 28.832 671.616 28.832Z" stroke="#EF9100" stroke-width="3.392"/>
+<text fill="#EF9100" fill-opacity="0.42" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="16.96" letter-spacing="0em"><tspan x="598.023" y="141.94">verifier</tspan></text>
+<text fill="#EF9100" fill-opacity="0.3" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="13.568" letter-spacing="0em"><tspan x="582.101" y="165.889">/ environment</tspan></text>
+<text fill="#EF9100" fill-opacity="0.45" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="13.568" letter-spacing="0em"><tspan x="741.524" y="18.3369">reward</tspan></text>
+<path opacity="0.4" d="M688.576 54.272H736.064" stroke="#EF9100" stroke-width="2.0352"/>
+<path opacity="0.4" d="M688.576 147.552H736.064" stroke="#EF9100" stroke-width="2.0352"/>
+<path opacity="0.4" d="M688.576 240.832H736.064" stroke="#EF9100" stroke-width="2.0352"/>
+<path opacity="0.6" d="M764.896 78.0161C778.01 78.0161 788.64 67.3855 788.64 54.2721C788.64 41.1586 778.01 30.5281 764.896 30.5281C751.783 30.5281 741.152 41.1586 741.152 54.2721C741.152 67.3855 751.783 78.0161 764.896 78.0161Z" stroke="#EF9100" stroke-width="2.2048"/>
+<text fill="#EF9100" fill-opacity="0.6" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="16.96" letter-spacing="0em"><tspan x="752.594" y="60.5319">0.2</tspan></text>
+<path d="M764.896 171.296C778.01 171.296 788.64 160.666 788.64 147.552C788.64 134.439 778.01 123.808 764.896 123.808C751.783 123.808 741.152 134.439 741.152 147.552C741.152 160.666 751.783 171.296 764.896 171.296Z" fill="#EF9100" fill-opacity="0.18" stroke="#EF9100" stroke-width="3.392"/>
+<text fill="#EF9100" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="16.96" letter-spacing="0em"><tspan x="752.594" y="153.812">0.9</tspan></text>
+<path opacity="0.6" d="M764.896 264.576C778.01 264.576 788.64 253.946 788.64 240.832C788.64 227.719 778.01 217.088 764.896 217.088C751.783 217.088 741.152 227.719 741.152 240.832C741.152 253.946 751.783 264.576 764.896 264.576Z" stroke="#EF9100" stroke-width="2.2048"/>
+<text fill="#EF9100" fill-opacity="0.6" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="16.96" letter-spacing="0em"><tspan x="752.594" y="247.092">0.5</tspan></text>
+<path d="M625.824 269.664V295.104H223.872V213.696" stroke="#EF9100" stroke-width="3.0528" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M217.088 217.088L223.872 203.52L230.656 217.088H217.088Z" fill="#EF9100"/>
+<text fill="#EF9100" fill-opacity="0.6" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="14.416" font-style="italic" letter-spacing="0em"><tspan x="269.888" y="316.782">update weights toward higher-reward attempts</tspan></text>
+</svg>

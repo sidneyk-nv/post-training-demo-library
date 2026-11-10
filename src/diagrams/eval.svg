@@ -1,0 +1,63 @@
+<svg width="848" height="231" viewBox="0 0 848 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M116.297 86.0166H19.3828C14.0304 86.0166 9.69141 90.3556 9.69141 95.708V146.588C9.69141 151.94 14.0304 156.279 19.3828 156.279H116.297C121.65 156.279 125.989 151.94 125.989 146.588V95.708C125.989 90.3556 121.65 86.0166 116.297 86.0166Z" stroke="#A7A7A7" stroke-width="2.42286"/>
+<text fill="#A7A7A7" fill-opacity="0.5" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="12.1143" letter-spacing="0em"><tspan x="54.245" y="117.139">Base</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.5" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="12.1143" letter-spacing="0em"><tspan x="50.396" y="134.099">Model</tspan></text>
+<path d="M128.411 121.148H164.754" stroke="#A7A7A7" stroke-width="2.18057" stroke-linecap="round"/>
+<path d="M162.331 116.908L174.446 121.148L162.331 125.388V116.908Z" fill="#A7A7A7"/>
+<text fill="#A7A7A7" fill-opacity="0.45" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="7.90508" letter-spacing="0em"><tspan x="131.56" y="107.715">responses</tspan></text>
+<path d="M402.194 16.9651H188.983C182.292 16.9651 176.869 22.3888 176.869 29.0794V213.217C176.869 219.907 182.292 225.331 188.983 225.331H402.194C408.885 225.331 414.309 219.907 414.309 213.217V29.0794C414.309 22.3888 408.885 16.9651 402.194 16.9651Z" fill="#A7A7A7" fill-opacity="0.04" stroke="#A7A7A7" stroke-width="1.81714" stroke-dasharray="4.85 3.63"/>
+<text fill="#A7A7A7" fill-opacity="0.5" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.2971" letter-spacing="0em"><tspan x="256.66" y="10.7148">LLM-AS-A-JURY</tspan></text>
+<path d="M247.131 86.0166H196.251C193.575 86.0166 191.406 88.1861 191.406 90.8623V151.434C191.406 154.11 193.575 156.279 196.251 156.279H247.131C249.808 156.279 251.977 154.11 251.977 151.434V90.8623C251.977 88.1861 249.808 86.0166 247.131 86.0166Z" stroke="#A7A7A7" stroke-width="1.57486"/>
+<path opacity="0.35" d="M201.097 101.765H242.286" stroke="#A7A7A7" stroke-width="1.45371"/>
+<path opacity="0.35" d="M201.097 112.668H242.286" stroke="#A7A7A7" stroke-width="1.45371"/>
+<path opacity="0.35" d="M201.097 123.571H242.286" stroke="#A7A7A7" stroke-width="1.45371"/>
+<path opacity="0.35" d="M201.097 134.474H227.749" stroke="#A7A7A7" stroke-width="1.45371"/>
+<text fill="#A7A7A7" fill-opacity="0.45" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="9.69143" letter-spacing="0em"><tspan x="207.807" y="172.94">rubric</tspan></text>
+<path opacity="0.45" d="M254.4 121.148C266.514 121.148 266.514 53.3079 278.629 53.3079" stroke="#A7A7A7" stroke-width="1.45371" stroke-linecap="round"/>
+<path opacity="0.45" d="M254.4 121.148C266.514 121.148 266.514 121.148 278.629 121.148" stroke="#A7A7A7" stroke-width="1.45371" stroke-linecap="round"/>
+<path opacity="0.45" d="M254.4 121.148C266.514 121.148 266.514 188.988 278.629 188.988" stroke="#A7A7A7" stroke-width="1.45371" stroke-linecap="round"/>
+<path d="M392.503 29.0796H288.32C284.306 29.0796 281.051 32.3338 281.051 36.3482V70.2682C281.051 74.2825 284.306 77.5367 288.32 77.5367H392.503C396.517 77.5367 399.771 74.2825 399.771 70.2682V36.3482C399.771 32.3338 396.517 29.0796 392.503 29.0796Z" stroke="#A7A7A7" stroke-width="1.81714"/>
+<text fill="#A7A7A7" fill-opacity="0.65" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="319.52" y="49.5868">Judge A</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.38" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="8.48" font-style="italic" letter-spacing="0em"><tspan x="316.632" y="65.4104">frontier LLM</tspan></text>
+<path d="M392.503 96.9194H288.32C284.306 96.9194 281.051 100.174 281.051 104.188V138.108C281.051 142.122 284.306 145.377 288.32 145.377H392.503C396.517 145.377 399.771 142.122 399.771 138.108V104.188C399.771 100.174 396.517 96.9194 392.503 96.9194Z" stroke="#A7A7A7" stroke-width="1.81714"/>
+<text fill="#A7A7A7" fill-opacity="0.65" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="319.417" y="117.427">Judge B</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.38" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="8.48" font-style="italic" letter-spacing="0em"><tspan x="316.632" y="133.25">frontier LLM</tspan></text>
+<path d="M392.503 164.759H288.32C284.306 164.759 281.051 168.014 281.051 172.028V205.948C281.051 209.962 284.306 213.216 288.32 213.216H392.503C396.517 213.216 399.771 209.962 399.771 205.948V172.028C399.771 168.014 396.517 164.759 392.503 164.759Z" stroke="#A7A7A7" stroke-width="1.81714"/>
+<text fill="#A7A7A7" fill-opacity="0.65" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="319.461" y="185.267">Judge C</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.38" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="8.48" font-style="italic" letter-spacing="0em"><tspan x="316.632" y="201.09">frontier LLM</tspan></text>
+<path d="M416.731 121.148H457.92" stroke="#A7A7A7" stroke-width="2.18057" stroke-linecap="round"/>
+<path d="M455.497 116.908L467.611 121.148L455.497 125.388V116.908Z" fill="#A7A7A7"/>
+<text fill="#A7A7A7" fill-opacity="0.45" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="9.08571" letter-spacing="0em"><tspan x="421.629" y="108.628">avg. score</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.4" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.2971" letter-spacing="0em"><tspan x="618.405" y="15.5605">JURY SCORES (AVG. OF 3 JUDGES)</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.6" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="488.21" y="54.4325">instruction following</tspan></text>
+<path d="M795.909 38.7708H609.349C607.341 38.7708 605.714 40.3979 605.714 42.405V56.9422C605.714 58.9493 607.341 60.5765 609.349 60.5765H795.909C797.916 60.5765 799.543 58.9493 799.543 56.9422V42.405C799.543 40.3979 797.916 38.7708 795.909 38.7708Z" fill="#A7A7A7" fill-opacity="0.07"/>
+<path d="M652.96 38.7708H609.349C607.341 38.7708 605.714 40.3979 605.714 42.405V56.9422C605.714 58.9493 607.341 60.5765 609.349 60.5765H652.96C654.967 60.5765 656.594 58.9493 656.594 56.9422V42.405C656.594 40.3979 654.967 38.7708 652.96 38.7708Z" fill="#FF8181" fill-opacity="0.55"/>
+<path opacity="0.9" d="M652.233 35.1365V64.2108" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M656.11 35.1365V64.2108" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M659.986 35.1365V64.2108" stroke="#A7A7A7" stroke-width="1.696"/>
+<text fill="#FF8181" fill-opacity="0.75" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="809.234" y="54.4325">26%</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.6" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="481.2" y="99.2555">domain-specific tasks</tspan></text>
+<path d="M795.909 83.5938H609.349C607.341 83.5938 605.714 85.2209 605.714 87.228V101.765C605.714 103.772 607.341 105.399 609.349 105.399H795.909C797.916 105.399 799.543 103.772 799.543 101.765V87.228C799.543 85.2209 797.916 83.5938 795.909 83.5938Z" fill="#A7A7A7" fill-opacity="0.07"/>
+<path d="M675.977 83.5938H609.349C607.341 83.5938 605.714 85.2209 605.714 87.228V101.765C605.714 103.772 607.341 105.399 609.349 105.399H675.977C677.984 105.399 679.611 103.772 679.611 101.765V87.228C679.611 85.2209 677.984 83.5938 675.977 83.5938Z" fill="#FF8181" fill-opacity="0.55"/>
+<path opacity="0.9" d="M673.554 79.9595V109.034" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M679.369 79.9595V109.034" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M685.184 79.9595V109.034" stroke="#A7A7A7" stroke-width="1.696"/>
+<text fill="#FF8181" fill-opacity="0.75" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="809.234" y="99.2555">38%</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.6" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="486.728" y="144.078">multi-step reasoning</tspan></text>
+<path d="M795.909 128.417H609.349C607.341 128.417 605.714 130.044 605.714 132.051V146.588C605.714 148.595 607.341 150.222 609.349 150.222H795.909C797.916 150.222 799.543 148.595 799.543 146.588V132.051C799.543 130.044 797.916 128.417 795.909 128.417Z" fill="#A7A7A7" fill-opacity="0.07"/>
+<path d="M662.651 128.417H609.349C607.341 128.417 605.714 130.044 605.714 132.051V146.588C605.714 148.595 607.341 150.222 609.349 150.222H662.651C664.659 150.222 666.286 148.595 666.286 146.588V132.051C666.286 130.044 664.659 128.417 662.651 128.417Z" fill="#FF8181" fill-opacity="0.55"/>
+<path opacity="0.9" d="M661.925 124.782V153.857" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M665.801 124.782V153.857" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M669.678 124.782V153.857" stroke="#A7A7A7" stroke-width="1.696"/>
+<text fill="#FF8181" fill-opacity="0.75" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="809.234" y="144.078">31%</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.6" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="510.525" y="188.901">aligned behavior</tspan></text>
+<path d="M795.909 173.239H609.349C607.341 173.239 605.714 174.866 605.714 176.874V191.411C605.714 193.418 607.341 195.045 609.349 195.045H795.909C797.916 195.045 799.543 193.418 799.543 191.411V176.874C799.543 174.866 797.916 173.239 795.909 173.239Z" fill="#A7A7A7" fill-opacity="0.07"/>
+<path d="M644.48 173.239H609.349C607.341 173.239 605.714 174.866 605.714 176.874V191.411C605.714 193.418 607.341 195.045 609.349 195.045H644.48C646.487 195.045 648.114 193.418 648.114 191.411V176.874C648.114 174.866 646.487 173.239 644.48 173.239Z" fill="#FF8181" fill-opacity="0.55"/>
+<path opacity="0.9" d="M644.48 169.605V198.679" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M648.357 169.605V198.679" stroke="#A7A7A7" stroke-width="1.696"/>
+<path opacity="0.9" d="M652.233 169.605V198.679" stroke="#A7A7A7" stroke-width="1.696"/>
+<text fill="#FF8181" fill-opacity="0.75" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="10.9029" letter-spacing="0em"><tspan x="809.234" y="188.901">22%</tspan></text>
+<path opacity="0.28" d="M751.086 29.0796V203.525" stroke="#A7A7A7" stroke-width="1.21143" stroke-dasharray="3.63 3.63"/>
+<text fill="#A7A7A7" fill-opacity="0.32" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="9.08571" letter-spacing="0em"><tspan x="738.035" y="26.2508">target</tspan></text>
+<text fill="#A7A7A7" fill-opacity="0.4" style="white-space: pre" xml:space="preserve" font-family="NVIDIA Sans" font-size="9.08571" font-style="italic" letter-spacing="0em"><tspan x="654.207" y="220.079">tick marks = individual judge scores</tspan></text>
+</svg>

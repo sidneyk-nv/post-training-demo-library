@@ -1,0 +1,97 @@
+@import "@kui/foundations-react/base.css";
+@import "@kui/foundations-tailwind-plugin";
+
+/* Kaizen setup: utilities live under #style-root (set on <html>) so they override component styles. */
+#style-root {
+  @tailwind utilities;
+}
+
+/* Tailwind only scans files it can see; make sure it picks up the app source. */
+@source "../src";
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Inline diagram SVGs scale with their container. */
+.diagram-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*
+ * Stage card zoom: clicking a collapsed stage morphs it into the open card
+ * (and the open card back into a small one). Matches Figma's Smart Animate:
+ * ease-out, 350ms. Uses the View Transitions API; browsers without it just
+ * switch instantly.
+ */
+::view-transition-group(*) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+}
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+  /* Scale each snapshot uniformly so the card zooms between sizes without stretching. */
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+/* The rest of the page doesn't change, so don't cross-fade it. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+/* Growing card: switch to the large view right away, then zoom it up. */
+html[data-vt-to="eval"]::view-transition-old(stage-eval),
+html[data-vt-to="sft"]::view-transition-old(stage-sft),
+html[data-vt-to="rl"]::view-transition-old(stage-rl),
+html[data-vt-to="eval-2"]::view-transition-old(stage-eval-2) {
+  animation: vt-fade-out 120ms ease-out both;
+}
+html[data-vt-to="eval"]::view-transition-new(stage-eval),
+html[data-vt-to="sft"]::view-transition-new(stage-sft),
+html[data-vt-to="rl"]::view-transition-new(stage-rl),
+html[data-vt-to="eval-2"]::view-transition-new(stage-eval-2) {
+  animation: vt-fade-in 120ms ease-out both;
+}
+/* Shrinking card: keep the large view while it zooms down, then switch to the small card. */
+html[data-vt-from="eval"]::view-transition-old(stage-eval),
+html[data-vt-from="sft"]::view-transition-old(stage-sft),
+html[data-vt-from="rl"]::view-transition-old(stage-rl),
+html[data-vt-from="eval-2"]::view-transition-old(stage-eval-2) {
+  animation: vt-fade-out 120ms ease-out 230ms both;
+}
+html[data-vt-from="eval"]::view-transition-new(stage-eval),
+html[data-vt-from="sft"]::view-transition-new(stage-sft),
+html[data-vt-from="rl"]::view-transition-new(stage-rl),
+html[data-vt-from="eval-2"]::view-transition-new(stage-eval-2) {
+  animation: vt-fade-in 120ms ease-out 230ms both;
+}
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
