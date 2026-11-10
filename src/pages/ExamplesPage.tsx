@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Text } from '@kui/foundations-react'
+import { Text } from '@nvidia/foundations-react-core'
 import { exampleHref, examples, type Example } from '../examples'
 
 export function ExamplesPage() {

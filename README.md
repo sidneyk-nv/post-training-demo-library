@@ -22,6 +22,8 @@ npm run dev
 
 Then open the URL that Vite prints (usually http://localhost:5173).
 
+Everything installs from the public npm registry. The first `npm run dev` or `npm run build` also downloads Kaizen UI's stylesheets from NVIDIA's public CDN (see [Styles](#styles)), so you need an internet connection the first time.
+
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Starts the dev server with hot reload |
@@ -29,16 +31,14 @@ Then open the URL that Vite prints (usually http://localhost:5173).
 | `npm run preview` | Serves the production build locally |
 | `npm run lint` | Runs ESLint |
 
-> [!IMPORTANT]
-> **The Kaizen UI packages are NVIDIA-internal.** The UI is built with NVIDIA's Kaizen design system (`@kui/foundations-react`, `@kui/foundations-tailwind-plugin` and their `@kui-contrib` dependencies). These are published only to NVIDIA's internal Artifactory registry, so `npm install` succeeds only on NVIDIA's network with access to that registry.
->
-> The repo's `.npmrc` sends only the `@kui` and `@kui-contrib` scopes to Artifactory; everything else, including NVIDIA's icon package `@nvidia/react-gui-icons`, comes from the public npm registry. To check your access to Kaizen, run:
->
-> ```bash
-> npm view @kui/foundations-react version
-> ```
->
-> If that prints a version number, you're set. If it fails, `npm install` will fail too. In that case, ask your NVIDIA contact for access, or for a build you can work from.
+### Styles
+
+The UI uses NVIDIA's Kaizen design system through its public package, [`@nvidia/foundations-react-core`](https://www.npmjs.com/package/@nvidia/foundations-react-core). That package ships without styles, so `scripts/fetch-kui-styles.mjs` downloads the matching stylesheets from `https://webassets.nvidia.com/kaizen-ui-foundations/<version>/`. It saves them to `src/generated/kui-styles.css`, which isn't committed to git. The script runs automatically before `npm run dev` and `npm run build`. It downloads again only when the Kaizen version changes, and it falls back to the saved copy if you're offline.
+
+To upgrade Kaizen, update `@nvidia/foundations-react-core` and `@nvidia/foundations-tailwind-plugin` to the same version. The next `npm run dev` fetches the matching styles.
+
+> [!NOTE]
+> This project uses Kaizen's `base.css`, which includes the NVIDIA Sans font and NVIDIA's icons. Kaizen's documentation says `base.css` is only for NVIDIA-licensed projects. Projects outside that should switch the script to `base-external.css`, which uses web-safe fonts.
 
 ## What's in the app
 
@@ -101,13 +101,6 @@ Your use case now has a card and an entry in the Examples menu. To give it a det
 
 Then run `npm run dev` and check your card, the Examples menu, your page and each popover.
 
-### Content guidelines
-
-- **Only publish what the partner has confirmed.** Popover facts (models, dataset sizes, scores, compute) should come from the partner's own published or approved sources. Leave out anything that's estimated or unconfirmed.
-- **Use real examples.** Show actual prompts, rubric items or answers from the partner's work where you can, and say where they come from.
-- **Get approval for logos and data.** Make sure the partner has approved the use of their name, logo and any data shown.
-- **Keep popovers short.** Aim for a title plus a few sentences; they should be readable at a glance.
-
 ### Before opening a pull request
 
 ```bash
@@ -121,8 +114,8 @@ Both should pass with no errors.
 
 - [React](https://react.dev/) 19, [TypeScript](https://www.typescriptlang.org/) and [Vite](https://vite.dev/).
 - [React Router](https://reactrouter.com/) for pages.
-- NVIDIA Kaizen UI (`@kui/foundations-react`, internal) for components such as the top bar, tabs, menu and popovers.
-- [Tailwind CSS](https://tailwindcss.com/) v4 with Kaizen's Tailwind plugin for styling.
+- NVIDIA Kaizen UI ([`@nvidia/foundations-react-core`](https://www.npmjs.com/package/@nvidia/foundations-react-core)) for components such as the top bar, tabs, menu and popovers, with its stylesheets from NVIDIA's CDN.
+- [Tailwind CSS](https://tailwindcss.com/) v4 with Kaizen's Tailwind plugin ([`@nvidia/foundations-tailwind-plugin`](https://www.npmjs.com/package/@nvidia/foundations-tailwind-plugin)) for styling.
 - `@nvidia/react-gui-icons` for icons.
 - The diagrams are SVGs exported from the project's Figma designs, with text kept as live text so it renders in the NVIDIA Sans font.
 - Moving between pipeline steps uses the browser's View Transitions API to zoom between the small and large cards. Browsers without it switch instantly.

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Kaizen UI styles downloaded by scripts/fetch-kui-styles.mjs
+src/generated/
+.venv/

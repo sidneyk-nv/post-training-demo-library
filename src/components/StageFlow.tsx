@@ -1,7 +1,7 @@
 import { Fragment, type MouseEvent } from 'react'
 import { flushSync } from 'react-dom'
 import { Link, useNavigate } from 'react-router-dom'
-import { Text } from '@kui/foundations-react'
+import { Text } from '@nvidia/foundations-react-core'
 import { ArrowRight, Collapse, Expand } from '@nvidia/react-gui-icons/icons'
 import type { Stage, StageId } from '../diagrams'
 import type { Hotspot } from '../examples'

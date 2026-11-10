@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Navigate, useParams, useSearchParams } from 'react-router-dom'
-import { Tabs } from '@kui/foundations-react'
+import { Tabs } from '@nvidia/foundations-react-core'
 import { StageFlow } from '../components/StageFlow'
 import { isStageId, stages } from '../diagrams'
 import { getExample } from '../examples'

@@ -1,5 +1,6 @@
-@import "@kui/foundations-react/base.css";
-@import "@kui/foundations-tailwind-plugin";
+/* Kaizen UI styles: downloaded from NVIDIA's CDN by scripts/fetch-kui-styles.mjs. */
+@import "./generated/kui-styles.css";
+@import "@nvidia/foundations-tailwind-plugin";
 
 /* Kaizen setup: utilities live under #style-root (set on <html>) so they override component styles. */
 #style-root {

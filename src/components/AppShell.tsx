@@ -1,7 +1,8 @@
 import { useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Anchor, AppBar, AppBarLogo, HorizontalNav, Menu } from '@kui/foundations-react'
+import { Anchor, AppBar, HorizontalNav, Menu } from '@nvidia/foundations-react-core'
+import nvidiaLogo from '../assets/nvidia-logo.svg'
 import { exampleHref, examples } from '../examples'
 
 /** Which top-level nav item matches the current route. */
@@ -22,7 +23,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         className="sticky top-0 z-10"
         slotStart={
           <>
-            <AppBarLogo />
+            <img src={nvidiaLogo} alt="NVIDIA" width={24.7} height={16} />
             {/* Larger than Kaizen's default so it reads from a distance (design: 24px bold). */}
             <Anchor asChild kind="standalone" textKind="inherit" className="text-24 font-bold">
               <Link to="/">Post-Training Demo Library</Link>

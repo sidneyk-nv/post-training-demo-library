@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PopoverContent, PopoverRoot, PopoverTrigger, Text } from '@kui/foundations-react'
+import { PopoverContent, PopoverRoot, PopoverTrigger, Text } from '@nvidia/foundations-react-core'
 import type { Stage } from '../diagrams'
 import type { Hotspot } from '../examples'
 

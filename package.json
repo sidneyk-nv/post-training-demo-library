@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/fetch-kui-styles.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/fetch-kui-styles.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@kui/foundations-react": "^1.21.0",
+    "@nvidia/foundations-react-core": "^1.21.0",
     "@nvidia/react-gui-icons": "^1.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -18,7 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
-    "@kui/foundations-tailwind-plugin": "^1.21.0",
+    "@nvidia/foundations-tailwind-plugin": "^1.21.0",
     "@tailwindcss/vite": "^4.3.5",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
