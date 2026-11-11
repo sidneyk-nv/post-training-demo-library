@@ -86,7 +86,7 @@ You should only need to change files in `src/examples/`.
 Your use case now has a card and an entry in the Examples menu. To give it a detail page:
 
 5. **Turn on the page.** Set `hasPage: true`. Its page will be at `/examples/<your-id>`.
-6. **Add page branding** (optional). Set `pageLogos` to show the partner's logo at the bottom of the page.
+6. **Add page branding** (optional). Set `pageLogos` to show the partner's logo at the top left of the page.
 7. **Add popovers** (optional). Copy `financial-research/popovers.ts` as a starting point and import it in your `index.ts`. Each popover sets:
    - its position over the diagram, in diagram pixels (the shared diagrams are 848px wide);
    - a title and body text;

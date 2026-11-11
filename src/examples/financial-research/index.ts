@@ -15,8 +15,8 @@ export const financialResearch: Example = {
   ],
   hasPage: true,
   pageLogos: [
-    { src: samayaMark, width: 28, height: 28, alt: '' },
-    { src: samayaLogotype, width: 98.7, height: 28, alt: 'Samaya' },
+    { src: samayaMark, width: 44, height: 44, alt: '' },
+    { src: samayaLogotype, width: 155.1, height: 44, alt: 'Samaya' },
   ],
   popovers,
 }

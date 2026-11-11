@@ -10,7 +10,10 @@ export type StageDiagram = { svg: string; width: number; height: number }
 
 export type Stage = {
   id: StageId
+  /** Short name, shown under the small card. */
   title: string
+  /** Full name, shown under the open card. */
+  fullTitle: string
   /** Inline SVG markup exported from Figma (text kept live so it uses NVIDIA Sans). */
   svg: string
   /** Natural size of the diagram in Figma, used to place hover areas as percentages. */
@@ -19,10 +22,10 @@ export type Stage = {
 }
 
 export const stages: Stage[] = [
-  { id: 'eval', title: 'Eval', svg: evalSvg, width: 848, height: 230.18 },
-  { id: 'sft', title: 'SFT', svg: sftSvg, width: 848, height: 313.76 },
-  { id: 'rl', title: 'RL', svg: rlSvg, width: 848, height: 329.02 },
-  { id: 'eval-2', title: 'Eval (pt. 2)', svg: eval2Svg, width: 848, height: 230.18 },
+  { id: 'eval', title: 'Eval', fullTitle: 'Evaluation', svg: evalSvg, width: 848, height: 230.18 },
+  { id: 'sft', title: 'SFT', fullTitle: 'Supervised Fine-Tuning', svg: sftSvg, width: 848, height: 313.76 },
+  { id: 'rl', title: 'RL', fullTitle: 'Reinforcement Learning', svg: rlSvg, width: 848, height: 329.02 },
+  { id: 'eval-2', title: 'Eval (pt. 2)', fullTitle: 'Evaluation (pt. 2)', svg: eval2Svg, width: 848, height: 230.18 },
 ]
 
 export function isStageId(value: string | null): value is StageId {

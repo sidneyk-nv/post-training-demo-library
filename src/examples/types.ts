@@ -40,7 +40,7 @@ export type Example = {
    * the Examples menu entry are shown but don't link anywhere.
    */
   hasPage?: boolean
-  /** Partner logo(s) shown at the bottom of the detail page. */
+  /** Partner logo(s) shown at the top left of the detail page. */
   pageLogos?: Logo[]
   /** Hover popovers per stage on the detail page. */
   popovers?: Partial<Record<StageId, Hotspot[]>>

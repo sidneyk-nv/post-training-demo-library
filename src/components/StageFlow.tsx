@@ -39,50 +39,62 @@ export function StageFlow({
     })
   }
 
+  // Each stage is a column: the card, then its title centered underneath.
+  // Arrows reserve an invisible title row so they line up with the cards' centers.
+  const title = (stage: Stage, { hidden = false, full = false } = {}) => (
+    <Text
+      kind="title/lg"
+      asChild
+      className={`m-0 block text-center ${hidden ? 'invisible' : ''}`}
+      style={hidden ? undefined : { viewTransitionName: `stage-title-${stage.id}` }}
+    >
+      <h2 aria-hidden={hidden || undefined}>{hidden ? '\u00a0' : full ? stage.fullTitle : stage.title}</h2>
+    </Text>
+  )
+
   return (
     <div className="flex min-h-[520px] flex-1 items-stretch gap-4">
       {stages.map((stage, i) => (
         <Fragment key={stage.id}>
           {i > 0 && (
-            <span
-              className="flex size-6 shrink-0 items-center justify-center self-center text-secondary"
-              style={{ viewTransitionName: `stage-arrow-${i}` }}
-              aria-hidden
-            >
-              <ArrowRight variant="fill" />
-            </span>
+            <div className="flex shrink-0 flex-col items-center justify-center gap-3" aria-hidden>
+              <span
+                className="flex size-6 items-center justify-center text-secondary"
+                style={{ viewTransitionName: `stage-arrow-${i}` }}
+              >
+                <ArrowRight variant="fill" />
+              </span>
+              {title(stage, { hidden: true })}
+            </div>
           )}
           {stage.id === activeStage ? (
-            <section
-              aria-label={`${stage.title} stage`}
-              className="flex min-w-0 flex-1 flex-col gap-4 rounded-lg border border-interaction-selected bg-surface-raised p-6 shadow-md"
-              style={{ viewTransitionName: `stage-${stage.id}` }}
-            >
-              <header className="flex items-center justify-between">
-                <Text kind="label/bold/lg" asChild>
-                  <h2>{stage.title}</h2>
-                </Text>
-                <span className="text-secondary" aria-hidden>
+            <section aria-label={`${stage.fullTitle} stage`} className="flex min-w-0 flex-1 flex-col gap-3">
+              <div
+                className="flex min-h-0 flex-1 flex-col rounded-lg border border-interaction-selected bg-surface-raised p-6 shadow-md"
+                style={{ viewTransitionName: `stage-${stage.id}` }}
+              >
+                <div className="flex justify-end text-secondary" aria-hidden>
                   <Expand />
-                </span>
-              </header>
-              <div className="flex min-h-0 flex-1 items-center justify-center rounded-lg border border-base bg-surface-sunken p-4">
-                <Diagram stage={stage} hotspots={hotspots?.[stage.id]} />
+                </div>
+                <div className="mt-2 flex min-h-0 flex-1 items-center justify-center rounded-lg border border-base bg-surface-sunken p-4">
+                  <Diagram stage={stage} hotspots={hotspots?.[stage.id]} />
+                </div>
               </div>
+              {title(stage, { full: true })}
             </section>
           ) : (
-            <Link
-              to={`?stage=${stage.id}`}
-              onClick={(e) => openStage(e, `?stage=${stage.id}`)}
-              aria-label={`Open ${stage.title} stage`}
-              style={{ viewTransitionName: `stage-${stage.id}` }}
-              className="flex min-w-20 shrink-0 items-center self-center justify-between gap-2 rounded-lg border border-base bg-surface-raised p-2 text-primary no-underline shadow-md hover:bg-interaction-hover"
-            >
-              <Text kind="label/bold/md">{stage.title}</Text>
-              <span className="text-secondary" aria-hidden>
+            <div className="flex shrink-0 flex-col items-center justify-center gap-3">
+              <Link
+                to={`?stage=${stage.id}`}
+                onClick={(e) => openStage(e, `?stage=${stage.id}`)}
+                aria-label={`Open ${stage.title} stage`}
+                style={{ viewTransitionName: `stage-${stage.id}` }}
+                className="flex size-20 items-center justify-center rounded-lg border border-base bg-surface-raised text-secondary no-underline shadow-md hover:bg-interaction-hover"
+              >
                 <Collapse />
-              </span>
-            </Link>
+              </Link>
+              {title(stage)}
+            </div>
           )}
         </Fragment>
       ))}
