@@ -257,7 +257,7 @@ export function Dataset({
   const back = Array.from({ length: layers }, (_, i) => layers - i).map((n) => {
     const o = n * gap
     const d = `M${x + o},${y} V${y - o + r} A${r},${r} 0 0 1 ${x + o + r},${y - o} H${x + w + o - r} A${r},${r} 0 0 1 ${x + w + o},${y - o + r} V${y + h - o - r} A${r},${r} 0 0 1 ${x + w + o - r},${y + h - o} H${x + w}`
-    return <path key={n} d={d} fill="none" stroke={color} strokeWidth={1.8} opacity={0.75 - n * 0.2} strokeLinecap="round" />
+    return <path key={n} d={d} fill="none" stroke={color} strokeWidth={2.2} opacity={0.95 - n * 0.2} strokeLinecap="round" />
   })
 
   const pad = 14
@@ -267,8 +267,8 @@ export function Dataset({
     const end = i === rows - 1 ? x + w * 0.6 : x + w - pad
     return (
       <g key={i}>
-        <rect x={x + pad} y={cy - 4.5} width={9} height={9} rx={2} fill="none" stroke={color} strokeWidth={1.5} opacity={0.9} />
-        <line x1={x + pad + 19} y1={cy} x2={end} y2={cy} stroke={color} strokeWidth={1.8} strokeLinecap="round" opacity={0.45} />
+        <rect x={x + pad} y={cy - 4.5} width={9} height={9} rx={2} fill="none" stroke={color} strokeWidth={2} />
+        <line x1={x + pad + 19} y1={cy} x2={end} y2={cy} stroke={color} strokeWidth={2} strokeLinecap="round" opacity={0.5} />
       </g>
     )
   })
@@ -276,7 +276,7 @@ export function Dataset({
   return (
     <>
       {back}
-      <rect x={x} y={y} width={w} height={h} rx={r} fill="none" stroke={color} strokeWidth={2} />
+      <rect x={x} y={y} width={w} height={h} rx={r} fill="none" stroke={color} strokeWidth={2.5} />
       {items}
     </>
   )

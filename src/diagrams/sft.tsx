@@ -14,14 +14,14 @@ export function SftDiagram() {
       <Box x={13.5} y={44} w={122} h={61} />
       <Line from={[29, 64.5]} to={[120.5, 64.5]} opacity={0.3} />
       <Line from={[29, 81.5]} to={[95, 81.5]} opacity={0.3} />
-      <Arrow points={[[139, 74.5], [186.5, 74.5]]} />
+      <Arrow points={[[139, 74.5], [200.5, 74.5]]} />
 
-      <Box color={BLUE} x={190} y={23.5} w={169.5} h={102} radius={13.5} strokeWidth={3.4} />
-      <Label color={BLUE} x={249.5} y={69} size={17.8}>Model</Label>
-      <Label color={BLUE} x={251} y={94.5} italic opacity={0.7}>weights</Label>
+      <Box color={BLUE} x={204} y={29.5} w={142} h={90} radius={13.5} strokeWidth={3.4} />
+      <Label color={BLUE} x={275} y={68.5} size={17.8} anchor="middle">Base</Label>
+      <Label color={BLUE} x={275} y={90.5} size={17.8} anchor="middle">Model</Label>
 
       {/* model → its attempt */}
-      <Arrow points={[[363, 74.5], [444.5, 74.5]]} />
+      <Arrow points={[[349.5, 74.5], [444.5, 74.5]]} />
       <Label x={477} y={35}>model's attempt</Label>
       <Box x={448} y={44} w={162.5} h={61} dashed />
       <Line from={[463, 64.5]} to={[595.5, 64.5]} opacity={0.3} />
@@ -37,7 +37,7 @@ export function SftDiagram() {
       <Label x={463} y={271}>ideal response (label)</Label>
 
       {/* the loss flows back to the model */}
-      <Arrow points={[[444.5, 220.5], [275, 220.5], [275, 129]]} headLength={13.5} headWidth={13.5} />
+      <Arrow points={[[444.5, 220.5], [275, 220.5], [275, 122.5]]} headLength={13.5} headWidth={13.5} />
       <Label x={312} y={210} italic>update weights</Label>
       <Label x={307} y={245.5} italic opacity={0.7}>to shrink the gap</Label>
 
