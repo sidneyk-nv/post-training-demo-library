@@ -237,6 +237,7 @@ export function Dataset({
   layers = 2,
   gap = 9,
   radius = 8,
+  checkboxes = true,
   color = 'currentColor',
 }: {
   x: number
@@ -249,6 +250,8 @@ export function Dataset({
   /** How far each card behind is shifted up and to the right. */
   gap?: number
   radius?: number
+  /** Show a checkbox before each line (a list of tasks). Off for a plain stack of documents. */
+  checkboxes?: boolean
   color?: string
 }) {
   const r = radius
@@ -267,8 +270,10 @@ export function Dataset({
     const end = i === rows - 1 ? x + w * 0.6 : x + w - pad
     return (
       <g key={i}>
-        <rect x={x + pad} y={cy - 4.5} width={9} height={9} rx={2} fill="none" stroke={color} strokeWidth={2} />
-        <line x1={x + pad + 19} y1={cy} x2={end} y2={cy} stroke={color} strokeWidth={2} strokeLinecap="round" opacity={0.5} />
+        {checkboxes && (
+          <rect x={x + pad} y={cy - 4.5} width={9} height={9} rx={2} fill="none" stroke={color} strokeWidth={2} />
+        )}
+        <line x1={x + pad + (checkboxes ? 19 : 0)} y1={cy} x2={end} y2={cy} stroke={color} strokeWidth={2} strokeLinecap="round" opacity={0.5} />
       </g>
     )
   })
