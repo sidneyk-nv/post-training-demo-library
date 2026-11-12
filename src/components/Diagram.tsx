@@ -4,15 +4,19 @@ import type { Stage } from '../diagrams'
 import type { Hotspot } from '../examples'
 
 /**
- * A stage diagram (SVG exported from Figma) with optional hover areas that
+ * A stage diagram (an SVG drawn in code) with optional hover areas that
  * open popovers. Hover areas are placed as percentages so they stay aligned
  * when the diagram scales down.
  */
 export function Diagram({ stage, hotspots = [] }: { stage: Stage; hotspots?: Hotspot[] }) {
   return (
     <div className="relative w-full" style={{ maxWidth: stage.width }}>
-      {/* Trusted, local SVG asset; inlined so its text uses the page's NVIDIA Sans font. */}
-      <div className="diagram-svg" aria-hidden dangerouslySetInnerHTML={{ __html: stage.svg }} />
+      {/* Drawn on a canvas of the stage's width x height; the SVG scales to fit. */}
+      <div className="diagram-svg" aria-hidden>
+        <svg width={stage.width} height={stage.height} viewBox={`0 0 ${stage.width} ${stage.height}`} fill="none">
+          <stage.Component />
+        </svg>
+      </div>
       {hotspots.map((h) => (
         <HoverPopover key={h.id} hotspot={h} stage={stage} />
       ))}

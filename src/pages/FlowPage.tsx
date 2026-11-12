@@ -6,8 +6,8 @@ import { isStageId, stages } from '../diagrams'
 import { getExample } from '../examples'
 
 /**
- * The post-training flow. `/introduction` shows the generic version;
- * `/examples/<id>` adds that use case's popovers, diagrams and logos.
+ * The per-use-case post-training flow (`/examples/<id>`): adds that
+ * use case's popovers, diagrams and logos, plus Architecture/Results tabs.
  */
 export function FlowPage() {
   const { exampleId } = useParams()

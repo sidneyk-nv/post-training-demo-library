@@ -1,31 +1,36 @@
-import evalSvg from './eval.svg?raw'
-import sftSvg from './sft.svg?raw'
-import rlSvg from './rl.svg?raw'
-import eval2Svg from './eval-2.svg?raw'
+import { createElement, type ComponentType } from 'react'
+import { EvalBeforeDiagram } from './eval_before'
+import { EvalAfterDiagram } from './eval_after'
+import { SftDiagram } from './sft'
+import { RlDiagram } from './rl'
 
 export type StageId = 'eval' | 'sft' | 'rl' | 'eval-2'
 
 /** A stage's diagram. Use cases can swap in their own (see `Example.diagrams`). */
-export type StageDiagram = { svg: string; width: number; height: number }
+export type StageDiagram = {
+  /** Natural size of the diagram in px, used to place hover areas as percentages. */
+  width: number
+  height: number
+  /** The diagram, written as a React component (see `primitives.tsx` for the building blocks). */
+  Component: ComponentType
+}
 
-export type Stage = {
+export type Stage = StageDiagram & {
   id: StageId
   /** Short name, shown under the small card. */
   title: string
   /** Full name, shown under the open card. */
   fullTitle: string
-  /** Inline SVG markup exported from Figma (text kept live so it uses NVIDIA Sans). */
-  svg: string
-  /** Natural size of the diagram in Figma, used to place hover areas as percentages. */
-  width: number
-  height: number
 }
 
+// The after diagram draws the post-trained model (grey base model colours vs. green).
+const PostTrainedEvalDiagram = () => createElement(EvalAfterDiagram, { postTrained: true })
+
 export const stages: Stage[] = [
-  { id: 'eval', title: 'Eval', fullTitle: 'Evaluation', svg: evalSvg, width: 848, height: 230.18 },
-  { id: 'sft', title: 'SFT', fullTitle: 'Supervised Fine-Tuning', svg: sftSvg, width: 848, height: 313.76 },
-  { id: 'rl', title: 'RL', fullTitle: 'Reinforcement Learning', svg: rlSvg, width: 848, height: 329.02 },
-  { id: 'eval-2', title: 'Eval (pt. 2)', fullTitle: 'Evaluation (pt. 2)', svg: eval2Svg, width: 848, height: 230.18 },
+  { id: 'eval', title: 'Eval', fullTitle: 'Evaluation', Component: EvalBeforeDiagram, width: 848, height: 231 },
+  { id: 'sft', title: 'SFT', fullTitle: 'Supervised Fine-Tuning', Component: SftDiagram, width: 848, height: 314 },
+  { id: 'rl', title: 'RL', fullTitle: 'Reinforcement Learning', Component: RlDiagram, width: 848, height: 330 },
+  { id: 'eval-2', title: 'Eval', fullTitle: 'Evaluation', Component: PostTrainedEvalDiagram, width: 848, height: 231 },
 ]
 
 export function isStageId(value: string | null): value is StageId {

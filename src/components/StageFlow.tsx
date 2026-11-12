@@ -8,7 +8,7 @@ import type { Hotspot } from '../examples'
 import { Diagram } from './Diagram'
 
 /**
- * Eval → SFT → RL → Eval (pt. 2). One stage is open and shows its diagram;
+ * Eval → SFT → RL → Eval. One stage is open and shows its diagram;
  * the others are collapsed and link to `?stage=<id>`.
  */
 export function StageFlow({
@@ -39,16 +39,16 @@ export function StageFlow({
     })
   }
 
-  // Each stage is a column: the card, then its title centered underneath.
-  // Arrows reserve an invisible title row so they line up with the cards' centers.
-  const title = (stage: Stage, { hidden = false, full = false } = {}) => (
+  // The open stage shows its full title under the card; collapsed stages are
+  // compact pills with the short title and an expand icon.
+  const title = (stage: Stage, { full = false } = {}) => (
     <Text
-      kind="title/lg"
+      kind={full ? 'title/lg' : 'title/md'}
       asChild
-      className={`m-0 block text-center ${hidden ? 'invisible' : ''}`}
-      style={hidden ? undefined : { viewTransitionName: `stage-title-${stage.id}` }}
+      className="m-0 block text-center"
+      style={{ viewTransitionName: `stage-title-${stage.id}` }}
     >
-      <h2 aria-hidden={hidden || undefined}>{hidden ? '\u00a0' : full ? stage.fullTitle : stage.title}</h2>
+      <h2>{full ? stage.fullTitle : stage.title}</h2>
     </Text>
   )
 
@@ -64,7 +64,6 @@ export function StageFlow({
               >
                 <ArrowRight variant="fill" />
               </span>
-              {title(stage, { hidden: true })}
             </div>
           )}
           {stage.id === activeStage ? (
@@ -89,11 +88,11 @@ export function StageFlow({
                 onClick={(e) => openStage(e, `?stage=${stage.id}`)}
                 aria-label={`Open ${stage.title} stage`}
                 style={{ viewTransitionName: `stage-${stage.id}` }}
-                className="flex size-20 items-center justify-center rounded-lg border border-base bg-surface-raised text-secondary no-underline shadow-md hover:bg-interaction-hover"
+                className="flex h-12 items-center gap-2 rounded-lg border border-base bg-surface-raised px-4 text-secondary no-underline shadow-md hover:bg-interaction-hover"
               >
                 <Collapse />
+                {title(stage)}
               </Link>
-              {title(stage)}
             </div>
           )}
         </Fragment>
