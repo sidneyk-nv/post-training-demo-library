@@ -1,11 +1,12 @@
 import { Arrow, Box, BLUE, Label, Line, WHITE } from './primitives'
 
 /**
- * SFT: the model answers a prompt, the answer is compared with the ideal
+ * Step 2, SFT: the model answers a prompt, the answer is compared with the ideal
  * response, and the gap (the loss) is used to update the model's weights.
- * White, with the accent (blue) on the model.
  * Canvas: 848 x 314 px (set in `diagrams/index.ts`).
+ * Accent color: blue
  */
+
 export function SftDiagram() {
   return (
     <g color={WHITE}>

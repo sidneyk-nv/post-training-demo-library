@@ -1,10 +1,10 @@
-import { createElement, type ComponentType } from 'react'
+import type { ComponentType } from 'react'
 import { EvalBeforeDiagram } from './eval_before'
 import { EvalAfterDiagram } from './eval_after'
 import { SftDiagram } from './sft'
 import { RlDiagram } from './rl'
 
-/** Every step a flow can show. The shared flow is eval, sft, rl, eval-2; `cft` is only for use cases that define it. */
+/** Every step a flow can show. The shared flow is eval, sft, rl, eval-2; not all items are used in every use case. */
 export const stageIds = ['eval', 'sft', 'rl', 'cft', 'eval-2'] as const
 export type StageId = (typeof stageIds)[number]
 
@@ -25,14 +25,11 @@ export type Stage = StageDiagram & {
   fullTitle: string
 }
 
-// The after diagram draws the post-trained model (grey base model colours vs. green).
-const PostTrainedEvalDiagram = () => createElement(EvalAfterDiagram, { postTrained: true })
-
 export const stages: Stage[] = [
   { id: 'eval', title: 'Eval', fullTitle: 'Evaluation', Component: EvalBeforeDiagram, width: 848, height: 231 },
   { id: 'sft', title: 'SFT', fullTitle: 'Supervised Fine-Tuning', Component: SftDiagram, width: 848, height: 314 },
   { id: 'rl', title: 'RL', fullTitle: 'Reinforcement Learning', Component: RlDiagram, width: 848, height: 330 },
-  { id: 'eval-2', title: 'Eval', fullTitle: 'Evaluation', Component: PostTrainedEvalDiagram, width: 848, height: 231 },
+  { id: 'eval-2', title: 'Eval', fullTitle: 'Evaluation', Component: EvalAfterDiagram, width: 848, height: 231 },
 ]
 
 export function isStageId(value: string | null): value is StageId {

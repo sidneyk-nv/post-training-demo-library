@@ -1,10 +1,10 @@
 import { Arrow, Badge, Box, Label, Line, ORANGE, WHITE } from './primitives'
 
 /**
- * RL: the model samples several attempts, a verifier / environment scores each
+ * Step 3, RL: the model samples several attempts, a verifier / environment scores each
  * one, and the scores are used to update the weights toward better attempts.
- * White, with the accent on the model, verifier and rewards.
  * Canvas: 848 x 330 px (set in `diagrams/index.ts`).
+ * Accent color: orange
  */
 export function RlDiagram() {
   // The three attempts are stacked rows, 93 px apart: same layout, different y.
@@ -47,7 +47,6 @@ export function RlDiagram() {
 
       {/* rewards flow back to the model */}
       <Arrow
-       
         points={[[626, 270], [626, 295], [224, 295], [224, 203.5]]}
         headLength={13.5}
         headWidth={13.5}

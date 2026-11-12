@@ -1,25 +1,22 @@
-import { WHITE, GREEN, Label, Dataset, Box, Arrow, RED } from './primitives'
+import { WHITE, Label, Dataset, Box, Arrow, RED } from './primitives'
 
-/** Illustrative scores (% correct) per category, and the level we're aiming for. */
-const categories = ['safety', 'domain-specific tasks', 'multi-step reasoning', 'aligned behavior']
-const scores = {
-  base: [26, 38, 31, 22],
-  postTrained: [82, 77, 79, 88],
-}
+/** Example scores and categories, with example target scores. */
+const categories = ['safety', 'task completion', 'multi-step reasoning', 'aligned behavior']
+const scores = [26, 38, 31, 22]
 const target = 75
 
 /**
  * Step 1, evaluation: run the model on a domain-specific taskset (or a benchmark),
  * score its answers, and compare the scores by category with a target.
  * Canvas: 848 x 231 px (set in `diagrams/index.ts`).
+ * Accent color: red
  */
-export function EvalBeforeDiagram({ postTrained }: { postTrained?: boolean }) {
-  // Mostly white; the model and the score bars take the accent:
-  // red for the base model's low scores, green once post-trained.
-  const accent = postTrained ? GREEN : RED
-  const values = postTrained ? scores.postTrained : scores.base
+export function EvalBeforeDiagram() {
+  // Accent color: red for the base model's low scores.
+  const accent = RED
+  const values = scores
 
-  // Score bars: a track from barX to barX + barW, filled up to the score.
+  // Score bars
   const barX = 622
   const barW = 170
   const rowY = [50, 95, 140, 185]
@@ -29,17 +26,8 @@ export function EvalBeforeDiagram({ postTrained }: { postTrained?: boolean }) {
     <g color={WHITE}>
       {/* the model, whose answers are run against the tasks */}
       <Box x={10} y={76} w={142} h={90} radius={13.5} strokeWidth={3.4} color={accent} />
-      {postTrained ? (
-        <>
-          <Label x={81} y={115} size={17.8} anchor="middle" color={accent}>Post-trained</Label>
-          <Label x={81} y={137} size={17.8} anchor="middle" color={accent}>Model</Label>
-        </>
-      ) : (
-        <>
-          <Label x={81} y={115} size={17.8} anchor="middle" color={accent}>Base</Label>
-          <Label x={81} y={137} size={17.8} anchor="middle" color={accent}>Model</Label>
-        </>
-      )}
+      <Label x={81} y={115} size={17.8} anchor="middle" color={accent}>Base</Label>
+      <Label x={81} y={137} size={17.8} anchor="middle" color={accent}>Model</Label>
       <Arrow points={[[162, 121], [212, 121]]} />
 
       {/* the benchmark (domain-specific tasks) the model's answers are checked against */}
