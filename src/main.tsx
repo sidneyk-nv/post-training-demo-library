@@ -9,7 +9,10 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* The Figma design is dark-only, so the theme is pinned to dark. */}
     <ThemeProvider theme="dark" global>
-      <BrowserRouter>
+      {/* Apply navigations synchronously. React Router otherwise defers them with
+          startTransition, so the stage zoom (StageFlow) can capture the page before
+          the new layout renders and the cards just snap. */}
+      <BrowserRouter useTransitions={false}>
         <App />
       </BrowserRouter>
     </ThemeProvider>
