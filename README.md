@@ -40,9 +40,9 @@ The UI uses NVIDIA's Kaizen design system through its public package, [`@nvidia/
 | Page | URL | Contents |
 | --- | --- | --- |
 | Examples | `/` | Clickable examples, containing details about partner post-training use cases. Each contains a diagram of the partner's post-training workflow, and a before-after comparison of their model. |
+| Examples sub-page | `/examples/<id>` | One sub-page of Examples per use case: the pipeline for one partner, with hover popovers and the partner's logo. |
 | Introduction | `/introduction` | A representative post-training pipeline. |
-| Demo detail | `/examples/<id>` | The pipeline for one partner, with hover popovers and the partner's logo. |
-| CTA | `/cta` | Call to action; how to get started with post-training. |
+| CTA | `/cta` | Call to action: How to get started with post-training. |
 
 ## Contributing a new use case
 
@@ -64,7 +64,7 @@ src/
       ...same structure
   diagrams/                 ← shared Eval / SFT / RL / Eval diagrams
   components/               ← app code: top bar, step flow, diagrams and popovers
-  pages/                    ← app code: Examples grid, Introduction, use-case pipeline page, placeholder
+  pages/                    ← app code: the main pages (Examples, Introduction, CTA) and use-case template page
 ```
 
 Only change files in `src/examples/`.
