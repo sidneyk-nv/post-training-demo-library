@@ -6,11 +6,19 @@ import type { Hotspot } from '../examples'
 /**
  * A stage diagram (an SVG drawn in code) with optional hover areas that
  * open popovers. Hover areas are placed as percentages so they stay aligned
- * when the diagram scales down.
+ * when the diagram scales up or down.
  */
 export function Diagram({ stage, hotspots = [] }: { stage: Stage; hotspots?: Hotspot[] }) {
   return (
-    <div className="relative w-full" style={{ maxWidth: stage.width }}>
+    <div
+      className="relative"
+      // Scales to fill the card, so the diagram keeps its proportions on any screen.
+      // The cap keeps it from growing taller than the screen on wide, short windows.
+      style={{
+        width: `${(stage.scale ?? 1) * 100}%`,
+        maxWidth: `calc((100vh - 20rem) * ${stage.width / stage.height})`,
+      }}
+    >
       {/* Drawn on a canvas of the stage's width x height; the SVG scales to fit. */}
       <div className="diagram-svg" aria-hidden>
         <svg width={stage.width} height={stage.height} viewBox={`0 0 ${stage.width} ${stage.height}`} fill="none">

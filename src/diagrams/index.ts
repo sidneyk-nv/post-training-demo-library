@@ -13,6 +13,8 @@ export type StageDiagram = {
   /** Natural size of the diagram in px, used to place hover areas as percentages. */
   width: number
   height: number
+  /** How much of the card's width the diagram fills (default 1). Lower it for a diagram that looks too big. */
+  scale?: number
   /** The diagram, written as a React component (see `primitives.tsx` for the building blocks). */
   Component: ComponentType
 }

@@ -4,8 +4,9 @@ import { exampleHref, examples, type Example } from '../examples'
 
 export function ExamplesPage() {
   return (
-    <div className="p-12">
-      <ul className="m-0 grid list-none grid-cols-1 gap-6 p-0 md:grid-cols-2 xl:grid-cols-3">
+    <div className="flex flex-1 flex-col p-8">
+      {/* The rows share the screen height, so the cards fit without scrolling (they scroll only when the screen is very short). */}
+      <ul className="m-0 grid flex-1 list-none auto-rows-fr grid-cols-1 gap-6 p-0 md:grid-cols-2 xl:grid-cols-3">
         {examples.map((example) => (
           <li key={example.id} className="flex">
             <ExampleCard example={example} />
@@ -21,7 +22,7 @@ function ExampleCard({ example }: { example: Example }) {
   const body = (
     <>
       <div
-        className="relative h-[220px] w-full overflow-hidden"
+        className="relative min-h-[80px] w-full flex-1 overflow-hidden"
         style={{ backgroundColor: example.cardImageBackground }}
       >
         <img

@@ -3,13 +3,13 @@ import { Arrow, Box, BLUE, Label, Line, WHITE } from './primitives'
 /**
  * Step 2, SFT: the model answers a prompt, the answer is compared with the ideal
  * response, and the gap (the loss) is used to update the model's weights.
- * Canvas: 848 x 314 px (set in `diagrams/index.ts`).
+ * Canvas: 848 x 314 px (set in `diagrams/index.ts`). Shifted right 30px to centre it.
  * Accent color: blue
  */
 
 export function SftDiagram() {
   return (
-    <g color={WHITE}>
+    <g color={WHITE} transform="translate(30 0)">
       {/* prompt → model */}
       <Label x={51} y={35}>prompt</Label>
       <Box x={13.5} y={44} w={122} h={61} />

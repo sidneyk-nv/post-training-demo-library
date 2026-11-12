@@ -43,7 +43,7 @@ export function R1Sft() {
       <Arrow points={[[676, 230.5], [614, 230.5]]} />
       <Box color={BLUE} x={680} y={200} w={108} h={61} radius={10} />
       <Label color={BLUE} x={734} y={226} size={15} anchor="middle">GLM 5.3</Label>
-      <Label color={BLUE} x={734} y={245} size={14} anchor="middle">judge + teacher</Label>
+      <Label color={BLUE} x={734} y={245} size={13} anchor="middle">judge + teacher</Label>
       <Label x={734} y={281} italic opacity={0.7} anchor="middle">keeps passing attempts,</Label>
       <Label x={734} y={298} italic opacity={0.7} anchor="middle">corrects failed ones</Label>
 

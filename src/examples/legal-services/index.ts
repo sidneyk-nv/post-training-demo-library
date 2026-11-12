@@ -32,8 +32,8 @@ export const legalServices: Example = {
   ],
   popovers,
   diagrams: {
-    eval: { Component: HarveyEvalBefore, width: 900, height: 300 },
-    cft: { Component: HarveyCft, width: 900, height: 330 },
-    'eval-2': { Component: HarveyEvalAfter, width: 900, height: 300 },
+    eval: { Component: HarveyEvalBefore, width: 900, height: 300, scale: 0.85 },
+    cft: { Component: HarveyCft, width: 900, height: 330, scale: 0.85 },
+    'eval-2': { Component: HarveyEvalAfter, width: 900, height: 300, scale: 0.85 },
   },
 }
