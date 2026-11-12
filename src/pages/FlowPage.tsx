@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Navigate, useParams, useSearchParams } from "react-router-dom";
 import { Tabs } from "@nvidia/foundations-react-core";
 import { StageFlow } from "../components/StageFlow";
-import { isStageId, stages } from "../diagrams";
+import { stages, type Stage } from "../diagrams";
 import { getExample } from "../examples";
 
 /**
@@ -19,13 +19,18 @@ export function FlowPage() {
     return <Navigate to="/" replace />;
   }
 
+  // The steps to show: the use case's own list, or the shared four. Use-case
+  // diagrams replace the shared ones step by step.
+  const steps = example?.steps ?? stages;
+  const exampleStages: Stage[] = steps.flatMap((step) => {
+    const stage = { ...stages.find((s) => s.id === step.id), ...step, ...example?.diagrams?.[step.id] };
+    return stage.Component ? [stage as Stage] : [];
+  });
+
   const stageParam = searchParams.get("stage");
-  const activeStage = isStageId(stageParam) ? stageParam : "eval";
-  // Use-case-specific diagrams replace the shared ones stage by stage.
-  const exampleStages = stages.map((stage) => ({
-    ...stage,
-    ...example?.diagrams?.[stage.id],
-  }));
+  const activeStage = exampleStages.some((s) => s.id === stageParam)
+    ? (stageParam as Stage["id"])
+    : exampleStages[0].id;
 
   return (
     <div className="flex flex-1 flex-col gap-6 px-6 pt-6 pb-12">

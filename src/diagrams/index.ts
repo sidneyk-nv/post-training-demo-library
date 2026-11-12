@@ -4,7 +4,9 @@ import { EvalAfterDiagram } from './eval_after'
 import { SftDiagram } from './sft'
 import { RlDiagram } from './rl'
 
-export type StageId = 'eval' | 'sft' | 'rl' | 'eval-2'
+/** Every step a flow can show. The shared flow is eval, sft, rl, eval-2; `cft` is only for use cases that define it. */
+export const stageIds = ['eval', 'sft', 'rl', 'cft', 'eval-2'] as const
+export type StageId = (typeof stageIds)[number]
 
 /** A stage's diagram. Use cases can swap in their own (see `Example.diagrams`). */
 export type StageDiagram = {
@@ -34,5 +36,5 @@ export const stages: Stage[] = [
 ]
 
 export function isStageId(value: string | null): value is StageId {
-  return stages.some((s) => s.id === value)
+  return stageIds.some((id) => id === value)
 }

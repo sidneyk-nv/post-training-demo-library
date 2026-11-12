@@ -92,6 +92,8 @@ Your use case now has a card and an entry in the Examples menu. To give it a det
    diagrams: { sft: { Component: MyDiagram, width: 848, height: 314 } },
    ```
 
+9. **Use different steps** (optional). If a use case doesn't follow Eval, SFT, RL, Eval (for example, an embedding model with a single contrastive fine-tuning step), set `steps` to the list of steps to show, and give any step that has no shared diagram its own entry in `diagrams`. See `src/examples/legal-services/` for an example.
+
 Then run `npm run dev` and check your card, the Examples menu, your page and each popover.
 
 ### Before opening a pull request

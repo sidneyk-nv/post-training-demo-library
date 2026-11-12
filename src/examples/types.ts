@@ -46,4 +46,10 @@ export type Example = {
   popovers?: Partial<Record<StageId, Hotspot[]>>
   /** Replace a shared diagram with a use-case-specific one. */
   diagrams?: Partial<Record<StageId, StageDiagram>>
+  /**
+   * The steps this use case shows, in order. Without it, the shared four
+   * (eval, sft, rl, eval-2) are shown. A step with no shared diagram (such as
+   * `cft`) needs its own entry in `diagrams`.
+   */
+  steps?: { id: StageId; title: string; fullTitle: string }[]
 }

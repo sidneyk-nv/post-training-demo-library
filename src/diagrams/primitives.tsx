@@ -286,3 +286,38 @@ export function Dataset({
     </>
   )
 }
+
+/**
+ * A database (dataset) icon: a cylinder with two bands. (x, y, w, h) is its
+ * bounding box; `cap` is how tall each curved end looks.
+ */
+export function Database({
+  x,
+  y,
+  w,
+  h,
+  cap = 11,
+  strokeWidth = 2.5,
+  color = 'currentColor',
+}: {
+  x: number
+  y: number
+  w: number
+  h: number
+  cap?: number
+  strokeWidth?: number
+  color?: string
+}) {
+  const rx = w / 2
+  const band = (by: number) => `M${x},${by} A${rx},${cap} 0 0 0 ${x + w},${by}`
+  const top = y + cap
+  const bottom = y + h - cap
+  return (
+    <g fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx={x + rx} cy={top} rx={rx} ry={cap} />
+      <path d={`M${x},${top} V${bottom} A${rx},${cap} 0 0 0 ${x + w},${bottom} V${top}`} />
+      <path d={band(top + (bottom - top) / 3)} />
+      <path d={band(top + (2 * (bottom - top)) / 3)} />
+    </g>
+  )
+}

@@ -1,7 +1,7 @@
 import { WHITE, GREEN, Label, Dataset, Box, Arrow, RED } from './primitives'
 
 /** Illustrative scores (% correct) per category, and the level we're aiming for. */
-const categories = ['instruction following', 'domain-specific tasks', 'multi-step reasoning', 'aligned behavior']
+const categories = ['safety', 'domain-specific tasks', 'multi-step reasoning', 'aligned behavior']
 const scores = {
   base: [26, 38, 31, 22],
   postTrained: [82, 77, 79, 88],
