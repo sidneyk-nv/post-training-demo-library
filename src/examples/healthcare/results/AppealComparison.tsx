@@ -1,46 +1,32 @@
 import { useState } from 'react'
-import { Badge, PopoverContent, PopoverRoot, PopoverTrigger, SegmentedControl, Text } from '@nvidia/foundations-react-core'
-import { appeals, type AppealSide, type Evidence, type Passage } from './appeals'
+import { Badge, PopoverContent, PopoverRoot, PopoverTrigger, Text } from '@nvidia/foundations-react-core'
+import { appeal as example, type AppealSide, type Evidence, type Passage } from './appeals'
 
 /**
  * Results tab for Healthcare (R1): recorded appeal excerpts before and after
- * post-training, side by side, for two synthetic cases (adapted from R1's
+ * post-training, side by side, for a synthetic case (adapted from R1's
  * "The appeal room" replay; see `appeals.ts`). Each citation opens the quoted
  * source record.
  */
 export function AppealComparison() {
-  const [id, setId] = useState(appeals[0].id)
-  const example = appeals.find((a) => a.id === id) ?? appeals[0]
-
   return (
-    <div className="flex flex-col gap-6">
-      <SegmentedControl
-        className="self-start"
-        size="large"
-        value={id}
-        onValueChange={setId}
-        items={appeals.map((a) => ({ value: a.id, children: a.title }))}
-      />
+    <div className="turn-in flex flex-col gap-6">
+      <header className="flex flex-col gap-2">
+        <Text kind="title/2xl" asChild>
+          <h2 className="m-0">{example.headline}</h2>
+        </Text>
+        <Text kind="body/regular/xl" className="block text-secondary">
+          {example.description}
+        </Text>
+        <Text kind="body/regular/lg" className="block text-secondary">
+          <span className="font-bold text-primary">The denial: </span>
+          {example.dispute}
+        </Text>
+      </header>
 
-      {/* Re-mount on switch so the new example fades in. */}
-      <div key={example.id} className="turn-in flex flex-col gap-6">
-        <header className="flex flex-col gap-2">
-          <Text kind="title/2xl" asChild>
-            <h2 className="m-0">{example.headline}</h2>
-          </Text>
-          <Text kind="body/regular/xl" className="block text-secondary">
-            {example.description}
-          </Text>
-          <Text kind="body/regular/lg" className="block text-secondary">
-            <span className="font-bold text-primary">The denial: </span>
-            {example.dispute}
-          </Text>
-        </header>
-
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <Column heading="Before" side={example.before} tone="bad" />
-          <Column heading="After Post-Training" side={example.after} tone="good" />
-        </div>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <Column heading="Before" side={example.before} tone="bad" />
+        <Column heading="After Post-Training" side={example.after} tone="good" />
       </div>
     </div>
   )

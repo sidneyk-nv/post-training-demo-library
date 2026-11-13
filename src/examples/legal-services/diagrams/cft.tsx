@@ -1,31 +1,24 @@
 import { Arrow, BLUE, Box, Dataset, Label, WHITE } from '../../../diagrams/primitives'
 
 /**
- * Harvey, CFT (contrastive fine-tuning): implicit signals (click telemetry and
- * follow-ups / refinements mined from conversations) become training pairs: a
- * query, a positive and negatives. The embedding model is updated so each query
+ * Harvey, CFT (contrastive fine-tuning): synthetic data becomes training
+ * pairs: a query, a positive and negatives. The embedding model is updated so each query
  * moves toward its positive and away from the negatives.
  * Canvas: 900 x 330 px (set in `index.ts`).
  * White, with the accent (blue) on the model.
- * Skeleton: how the pairs and negatives are built is still to be confirmed.
+ * Skeleton: how the synthetic data, pairs and negatives are built is still to be confirmed.
  */
 
 export function HarveyCft() {
   return (
     <g color={WHITE}>
-      {/* implicit signals */}
-      <Label x={89} y={26} anchor="middle">implicit signals</Label>
-      <Box x={14} y={40} w={150} h={56} />
-      <Label x={89} y={64} size={14.4} anchor="middle">click</Label>
-      <Label x={89} y={82} size={14.4} anchor="middle">telemetry</Label>
-      <Box x={14} y={108} w={150} h={56} />
-      <Label x={89} y={132} size={14.4} anchor="middle">follow-ups &amp;</Label>
-      <Label x={89} y={150} size={14.4} anchor="middle">refinements</Label>
-      <Label x={89} y={184} size={13} italic opacity={0.7} anchor="middle">mined from conversations</Label>
+      {/* synthetic data */}
+      <Box x={14} y={78} w={150} h={56} />
+      <Label x={89} y={102} size={14.4} anchor="middle">synthetic</Label>
+      <Label x={89} y={120} size={14.4} anchor="middle">data</Label>
 
-      {/* signals → training pairs */}
-      <Arrow points={[[168, 68], [222, 96]]} smooth strokeWidth={2.5} headLength={13.5} headWidth={12} />
-      <Arrow points={[[168, 136], [222, 116]]} smooth strokeWidth={2.5} headLength={13.5} headWidth={12} />
+      {/* synthetic data → training pairs */}
+      <Arrow points={[[168, 106], [222, 106]]} />
       <Dataset x={226} y={73} w={90} h={66} checkboxes={false} />
       <Label x={280} y={172} anchor="middle">training pairs</Label>
       <Label x={280} y={189} size={12.5} italic opacity={0.7} anchor="middle">[negatives: TBD]</Label>
