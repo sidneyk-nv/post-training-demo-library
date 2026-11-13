@@ -34,6 +34,8 @@ export type Example = {
   cardImage: string
   /** Set when the card image is letterboxed on a solid colour instead of filling the frame. */
   cardImageBackground?: string
+  /** Topic labels shown under the card description, e.g. `['Cybersecurity']`. */
+  tags?: string[]
   /** Partner logo(s) shown above the card title. */
   partnerLogos: Logo[]
   /**
