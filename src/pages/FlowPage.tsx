@@ -69,8 +69,10 @@ export function FlowPage() {
           activeStage={activeStage}
           hotspots={example?.popovers}
         />
+      ) : example?.results ? (
+        <example.results />
       ) : (
-        // Results isn't designed yet: intentionally blank.
+        // No results for this use case yet: intentionally blank.
         <div className="flex-1" />
       )}
     </div>

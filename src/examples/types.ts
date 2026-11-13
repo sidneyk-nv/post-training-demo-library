@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react'
 import type { StageDiagram, StageId } from '../diagrams'
 
 /** A logo image with its display size in px (from Figma). */
@@ -52,4 +53,6 @@ export type Example = {
    * `cft`) needs its own entry in `diagrams`.
    */
   steps?: { id: StageId; title: string; fullTitle: string }[]
+  /** What the Results tab shows on the detail page. Without it, the tab is blank. */
+  results?: ComponentType
 }

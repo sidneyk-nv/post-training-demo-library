@@ -7,7 +7,7 @@ import type { Example } from './types'
 import { financialResearch } from './financial-research'
 import { legalServices } from './legal-services'
 import { healthcare } from './healthcare'
-import { customerService } from './customer-service'
+import { patientInteraction } from './patient-interaction'
 import { nationalCyberDefense } from './national-cyber-defense'
 import { computerUse } from './computer-use'
 
@@ -17,7 +17,7 @@ export const examples: Example[] = [
   financialResearch,
   legalServices,
   healthcare,
-  customerService,
+  patientInteraction,
   nationalCyberDefense,
   computerUse,
 ]
