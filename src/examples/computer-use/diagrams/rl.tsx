@@ -6,7 +6,7 @@ import { Arrow, Box, Dataset, Label, ORANGE, WHITE } from '../../../diagrams/pri
  * judge) gives each a reward, and the weights are updated toward rollouts that
  * beat the group's average.
  * The training tasks come from H's Agentic Task Factory.
- * Canvas: 900 x 315 px (set in `index.ts`). Shifted right 45px to centre it.
+ * Canvas: 900 x 315 px (set in `index.ts`). Shifted right 20px to centre it.
  * Accent color: orange
  */
 
@@ -14,7 +14,7 @@ const thin = { strokeWidth: 2, headLength: 9, headWidth: 8 }
 
 export function HRl() {
   return (
-    <g color={WHITE} transform="translate(45 0)">
+    <g color={WHITE} transform="translate(20 0)">
       {/* the training task and its sandbox → model */}
       <Box x={16} y={14} w={176} h={44} />
       <Label x={104} y={41} size={13.5} anchor="middle">Agentic Task Factory</Label>

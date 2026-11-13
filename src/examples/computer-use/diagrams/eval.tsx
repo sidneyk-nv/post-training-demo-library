@@ -42,7 +42,7 @@ const others = [
 
 function HEval({ accent, name, status, before }: { accent: string; name: string[]; status: string; before: boolean }) {
   return (
-    <g color={WHITE} transform="translate(100 20)">
+    <g color={WHITE} transform="translate(71 20)">
       {/* evaluation dataset (computer-use tasks) → model → score */}
       <Label x={98} y={38} anchor="middle">evaluation dataset:</Label>
       <Label x={98} y={56} anchor="middle">computer-use tasks</Label>

@@ -1,23 +1,22 @@
 import { Text } from '@nvidia/foundations-react-core'
-import partner1 from './cta/partner-1.png'
-import partner2 from './cta/partner-2.png'
-import partner3 from './cta/partner-3.png'
-import partner4 from './cta/partner-4.png'
-import partner5 from './cta/partner-5.png'
+import baseten from './cta/baseten.png'
+import fireworks from './cta/fireworks.svg'
+import coreweave from './cta/coreweave.svg'
+import nebius from './cta/nebius.svg'
+import trajectory from './cta/trajectory.svg'
 
 /**
  * Call to action: get started with post-training, either through NVIDIA's
  * libraries or with a partner.
  */
 
-/** Partners, on the left. 
- * Replace sample logos with real SVG logo files in `src/pages/cta/`*/
-const partners: { name: string; logo: string; href?: string }[] = [
-  { name: 'Partner 1', logo: partner1 },
-  { name: 'Partner 2', logo: partner2 },
-  { name: 'Partner 3', logo: partner3 },
-  { name: 'Partner 4', logo: partner4 },
-  { name: 'Partner 5', logo: partner5 },
+/** Partners, on the left. */
+const partners: { name: string; logo: string; href: string; height: number }[] = [
+  { name: 'Baseten', logo: baseten, href: 'https://www.baseten.co/', height: 36 },
+  { name: 'Fireworks', logo: fireworks, href: 'https://fireworks.ai/', height: 22 },
+  { name: 'CoreWeave', logo: coreweave, href: 'https://www.coreweave.com/', height: 38 },
+  { name: 'Nebius', logo: nebius, href: 'https://nebius.com/', height: 34 },
+  { name: 'Trajectory', logo: trajectory, href: 'https://www.trajectory.ai/', height: 32 },
 ]
 
 /**
@@ -97,8 +96,11 @@ function Heading({ id, children }: { id: string; children: string }) {
 }
 
 function PartnerLogo({ partner }: { partner: (typeof partners)[number] }) {
-  const img = <img src={partner.logo} alt={partner.name} className="h-10 w-auto opacity-80" />
-  return partner.href ? <a href={partner.href}>{img}</a> : img
+  return (
+    <a href={partner.href} target="_blank" rel="noreferrer" aria-label={partner.name}>
+      <img src={partner.logo} alt={partner.name} style={{ height: partner.height }} className="w-auto opacity-90" />
+    </a>
+  )
 }
 
 /** The resource's sentence, with its `link` part as a green link. */

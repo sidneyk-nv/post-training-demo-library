@@ -5,7 +5,7 @@ import { Arrow, BLUE, Box, Label, Line, WHITE } from '../../../diagrams/primitiv
  * "what's the next step?") and an image of the screen, and predicts the agent's
  * next step. That prediction is compared with the real next step from a
  * successful trajectory, and the gap (the loss) updates the weights.
- * Canvas: 900 x 335 px (set in `index.ts`). Shifted right 41px to centre it.
+ * Canvas: 900 x 335 px (set in `index.ts`). Shifted right 29px to centre it.
  * Accent color: blue
  */
 
@@ -13,7 +13,7 @@ const thin = { strokeWidth: 2, headLength: 9, headWidth: 8 }
 
 export function HSft() {
   return (
-    <g color={WHITE} transform="translate(41 0)">
+    <g color={WHITE} transform="translate(29 0)">
       {/* input 1: the training task, the steps so far and "what's next?" */}
       <Label x={111} y={28} anchor="middle">training task</Label>
       <Box x={16} y={36} w={190} h={130} />

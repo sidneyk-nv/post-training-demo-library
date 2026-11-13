@@ -12,7 +12,7 @@ const base = 'Nemotron 3 Nano Omni'
 const evalHotspots = (prefix: string, model: Hotspot, scoreBody: string): Hotspot[] => [
   {
     id: `${prefix}-tasks`,
-    x: 120,
+    x: 91,
     y: 88,
     width: 156,
     height: 120,
@@ -24,7 +24,7 @@ const evalHotspots = (prefix: string, model: Hotspot, scoreBody: string): Hotspo
   model,
   {
     id: `${prefix}-score`,
-    x: 590,
+    x: 561,
     y: 44,
     width: 250,
     height: 208,
@@ -39,7 +39,7 @@ const evalHotspots = (prefix: string, model: Hotspot, scoreBody: string): Hotspo
 export const popovers: Partial<Record<StageId, Hotspot[]>> = {
   eval: evalHotspots('eval', {
     id: 'eval-model',
-    x: 354,
+    x: 325,
     y: 103,
     width: 142,
     height: 90,
@@ -50,7 +50,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
   sft: [
     {
       id: 'sft-task',
-      x: 57,
+      x: 45,
       y: 36,
       width: 190,
       height: 130,
@@ -61,7 +61,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'sft-screen',
-      x: 57,
+      x: 45,
       y: 190,
       width: 190,
       height: 96,
@@ -72,7 +72,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'sft-model',
-      x: 303,
+      x: 291,
       y: 75,
       width: 130,
       height: 90,
@@ -83,7 +83,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'sft-attempt',
-      x: 491,
+      x: 479,
       y: 90,
       width: 162.5,
       height: 61,
@@ -94,7 +94,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'sft-target',
-      x: 491,
+      x: 479,
       y: 228,
       width: 162.5,
       height: 61,
@@ -105,7 +105,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'sft-data',
-      x: 712,
+      x: 700,
       y: 112,
       width: 150,
       height: 96,
@@ -118,7 +118,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
   rl: [
     {
       id: 'rl-factory',
-      x: 61,
+      x: 36,
       y: 14,
       width: 176,
       height: 44,
@@ -129,7 +129,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'rl-task',
-      x: 61,
+      x: 36,
       y: 105,
       width: 176,
       height: 100,
@@ -140,7 +140,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'rl-model',
-      x: 271,
+      x: 246,
       y: 110,
       width: 130,
       height: 90,
@@ -151,7 +151,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'rl-rollouts',
-      x: 450,
+      x: 425,
       y: 97,
       width: 140,
       height: 160,
@@ -162,7 +162,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'rl-verifier',
-      x: 635,
+      x: 610,
       y: 115,
       width: 116,
       height: 80,
@@ -173,7 +173,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
     },
     {
       id: 'rl-reward',
-      x: 795,
+      x: 770,
       y: 135,
       width: 85,
       height: 50,
@@ -186,7 +186,7 @@ export const popovers: Partial<Record<StageId, Hotspot[]>> = {
   ],
   'eval-2': evalHotspots('eval2', {
     id: 'eval2-model',
-    x: 354,
+    x: 325,
     y: 103,
     width: 142,
     height: 90,
