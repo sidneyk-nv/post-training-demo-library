@@ -100,3 +100,33 @@ html[data-vt-from="eval-2"]::view-transition-new(stage-eval-2) {
     animation: none !important;
   }
 }
+
+/* Results tab: conversation turns slide in as they play; the typing indicator's dots pulse. */
+.turn-in {
+  animation: turn-in 320ms cubic-bezier(0, 0, 0.58, 1) both;
+}
+@keyframes turn-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.typing-dot {
+  animation: typing-dot 1s ease-in-out infinite;
+}
+@keyframes typing-dot {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .turn-in,
+  .typing-dot {
+    animation: none;
+  }
+}

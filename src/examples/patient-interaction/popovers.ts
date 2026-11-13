@@ -1,0 +1,197 @@
+import type { Hotspot } from '../types'
+import type { StageId } from '../../diagrams'
+
+/**
+ * Hover popovers for the Patient Interaction diagrams.
+ *
+ * Kept to short talking points: demo staff explain the details out loud.
+ * Source: the "Nemotron Healthcare Post Training FAQ" (GRPO run completed
+ * 20 September 2026). Don't add figures that aren't in it. Scores are 1–5
+ * rubric means on the 97 validation cases, base model vs. step 75.
+ * This is an experimental simulation with synthetic patients, not a
+ * clinically validated system.
+ */
+const nemotron = 'Nemotron 3.5 Lightning (30B MoE, 3B active)'
+
+const evalHotspots = (prefix: string, model: Hotspot, score: Hotspot): Hotspot[] => [
+  {
+    id: `${prefix}-cases`,
+    x: 18,
+    y: 74,
+    width: 102,
+    height: 140,
+    title: 'Validation cases',
+    body: '• 97 synthetic patient cases, held out from training\n• No real patient data',
+    popoverWidth: 320,
+    side: 'bottom',
+  },
+  model,
+  {
+    id: `${prefix}-patient-tools`,
+    x: 186,
+    y: 182,
+    width: 142,
+    height: 38,
+    title: 'Simulated patient and tools',
+    body: '• A second Nemotron model plays the patient\n• Tools act on a sandbox, not a real health record',
+    popoverWidth: 340,
+    side: 'bottom',
+  },
+  {
+    id: `${prefix}-conversation`,
+    x: 362,
+    y: 95,
+    width: 66,
+    height: 85,
+    title: 'Conversation',
+    body: 'The whole interaction is scored, including every tool call',
+    popoverWidth: 300,
+  },
+  ...[48, 102].map((y, i) => ({
+    id: `${prefix}-judge-${'ab'[i]}`,
+    x: 472,
+    y,
+    width: 168,
+    height: 44,
+    title: 'LLM judge',
+    body: 'Scores the conversation independently of the other judge',
+    popoverWidth: 300,
+  })),
+  {
+    id: `${prefix}-rubric`,
+    x: 472,
+    y: 160,
+    width: 168,
+    height: 40,
+    title: 'Rubric',
+    body: '• 6 axes from PatientAgentBench\n• Clinical safety is weighted highest',
+    popoverWidth: 300,
+    side: 'bottom',
+  },
+  score,
+]
+
+export const popovers: Partial<Record<StageId, Hotspot[]>> = {
+  eval: evalHotspots(
+    'eval',
+    { id: 'eval-model', x: 186, y: 80, width: 142, height: 90, title: 'Base model', body: nemotron, popoverWidth: 340 },
+    {
+      id: 'eval-score',
+      x: 700,
+      y: 22,
+      width: 304,
+      height: 210,
+      title: 'Rubric scores',
+      body: '• Average over the 97 validation cases, 1–5 scale\n• The weighted aggregate combines all 6 axes',
+      popoverWidth: 380,
+      side: 'bottom',
+      align: 'end',
+    },
+  ),
+  rl: [
+    {
+      id: 'rl-case',
+      x: 13.5,
+      y: 100,
+      width: 98.5,
+      height: 77,
+      title: 'Patient case',
+      body: '• 193 synthetic patient cases\n• e.g. refills, symptoms, scheduling',
+      popoverWidth: 300,
+      side: 'bottom',
+    },
+    {
+      id: 'rl-patient',
+      x: 152.5,
+      y: 22,
+      width: 67,
+      height: 50,
+      title: 'Simulated patient',
+      body: 'Nemotron plays the patient; it is not trained',
+      popoverWidth: 300,
+    },
+    {
+      id: 'rl-tools',
+      x: 228,
+      y: 22,
+      width: 67,
+      height: 50,
+      title: 'Clinical tools',
+      body: '• e.g. get_profile, request_refill, schedule_appointment\n• Sandbox only: no real prescriptions or bookings',
+      popoverWidth: 440,
+    },
+    { id: 'rl-model', x: 152.5, y: 95, width: 142.5, height: 105, title: 'Policy model', body: `${nemotron}, the only model updated`, popoverWidth: 340 },
+    {
+      id: 'rl-conversations',
+      x: 376.5,
+      y: 6,
+      width: 125.5,
+      height: 270,
+      title: '4 conversations per case',
+      body: 'Same patient and opening; the model makes different choices each time',
+      popoverWidth: 320,
+    },
+    {
+      id: 'rl-judges',
+      x: 566.5,
+      y: 29,
+      width: 118.5,
+      height: 247,
+      title: 'LLM judges',
+      body: '• 2 Nemotron judges × 6 rubric axes\n• One reward per conversation',
+      popoverWidth: 300,
+      side: 'left',
+      align: 'start',
+    },
+    {
+      id: 'rl-reward',
+      x: 708,
+      y: 6,
+      width: 80,
+      height: 264,
+      title: 'Reward',
+      body: 'Judge scores mapped to 0–1. Real values from one training case',
+      popoverWidth: 300,
+      side: 'left',
+      align: 'start',
+    },
+    {
+      id: 'rl-vs-group',
+      x: 796,
+      y: 6,
+      width: 80,
+      height: 264,
+      title: 'Compared within the group',
+      body: '• Each reward vs. the other three for the same case\n• Above average is reinforced; below average is discouraged',
+      popoverWidth: 460,
+      side: 'left',
+      align: 'start',
+    },
+    {
+      id: 'rl-update',
+      x: 244,
+      y: 304,
+      width: 370,
+      height: 22,
+      title: 'GRPO update',
+      body: '• 97 updates, 776 training conversations\n• 2 DGX Stations (1 GB300 each), about 18.5 hours',
+      popoverWidth: 360,
+    },
+  ],
+  'eval-2': evalHotspots(
+    'eval2',
+    { id: 'eval2-model', x: 186, y: 80, width: 142, height: 90, title: 'After GRPO', body: `${nemotron} after 75 GRPO updates`, popoverWidth: 340 },
+    {
+      id: 'eval2-score',
+      x: 700,
+      y: 22,
+      width: 304,
+      height: 210,
+      title: 'Rubric scores',
+      body: '• Biggest gains: helpfulness and triage\n• Not shown: conversational quality fell (4.44 → 3.95)',
+      popoverWidth: 400,
+      side: 'bottom',
+      align: 'end',
+    },
+  ),
+}
