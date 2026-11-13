@@ -17,6 +17,12 @@ export type StageDiagram = {
   scale?: number
   /** The diagram, written as a React component (see `primitives.tsx` for the building blocks). */
   Component: ComponentType
+  /**
+   * Software this step runs on, pinned to the bottom-left corner of the diagram
+   * panel: an `icon` shown beside the `label`, or a full `logo` (wordmark) on its
+   * own, with `label` as its accessible name.
+   */
+  software?: { label: string; icon: string; logo?: never } | { label: string; logo: string; icon?: never }
 }
 
 export type Stage = StageDiagram & {

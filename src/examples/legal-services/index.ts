@@ -5,6 +5,7 @@ import harveyLogotype from './logos/harvey-logotype.svg'
 import { popovers } from './popovers'
 import { HarveyEvalBefore } from './diagrams/eval-before'
 import { HarveyCft } from './diagrams/cft'
+import trajectoryLogo from './logos/trajectory.svg'
 import { HarveyEvalAfter } from './diagrams/eval-after'
 
 // references:
@@ -14,7 +15,7 @@ export const legalServices: Example = {
   id: 'legal-services',
   title: 'Legal Services',
   description: 'Find the most relevant documents for your case.',
-  tags: ['Content'],
+  tags: ['Regulated Industry'],
   cardImage,
   partnerLogos: [
     { src: harveyMark, width: 16, height: 16, alt: '' },
@@ -34,7 +35,7 @@ export const legalServices: Example = {
   popovers,
   diagrams: {
     eval: { Component: HarveyEvalBefore, width: 900, height: 300, scale: 0.85 },
-    cft: { Component: HarveyCft, width: 900, height: 330, scale: 0.85 },
+    cft: { Component: HarveyCft, width: 900, height: 330, scale: 0.85, software: { label: 'Trajectory', logo: trajectoryLogo } },
     'eval-2': { Component: HarveyEvalAfter, width: 900, height: 300, scale: 0.85 },
   },
 }

@@ -75,8 +75,20 @@ export function StageFlow({
                 <div className="flex justify-end text-secondary" aria-hidden>
                   <Expand />
                 </div>
-                <div className="mt-2 flex min-h-0 flex-1 items-center justify-center rounded-lg border border-base bg-surface-sunken p-4">
+                <div className="relative mt-2 flex min-h-0 flex-1 items-center justify-center rounded-lg border border-base bg-surface-sunken p-4">
                   <Diagram stage={stage} hotspots={hotspots?.[stage.id]} />
+                  {stage.software && (
+                    <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                      {stage.software.logo ? (
+                        <img src={stage.software.logo} alt={stage.software.label} className="h-9 w-auto" />
+                      ) : (
+                        <>
+                          <img src={stage.software.icon} alt="" width={56} height={56} />
+                          <Text kind="title/md">{stage.software.label}</Text>
+                        </>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
               {title(stage, { full: true })}
