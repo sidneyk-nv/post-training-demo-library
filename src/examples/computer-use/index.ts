@@ -5,6 +5,7 @@ import { popovers } from './popovers'
 import { HEvalBefore, HEvalAfter } from './diagrams/eval'
 import { HSft } from './diagrams/sft'
 import { HRl } from './diagrams/rl'
+import { ExpenseComparison } from './results/ExpenseComparison'
 
 export const computerUse: Example = {
   id: 'computer-use',
@@ -30,4 +31,6 @@ export const computerUse: Example = {
     rl: { Component: HRl, width: 900, height: 315 },
     'eval-2': { Component: HEvalAfter, width: 900, height: 290 },
   },
+  // The invoice task from H's demo, run by the base model and by Holotron4 Nano.
+  results: ExpenseComparison,
 }
