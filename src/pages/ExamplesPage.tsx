@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Text } from '@nvidia/foundations-react-core'
+import { Tag, Text } from '@nvidia/foundations-react-core'
 import { exampleHref, examples, type Example } from '../examples'
 
 export function ExamplesPage() {
@@ -43,6 +43,18 @@ function ExampleCard({ example }: { example: Example }) {
         <Text kind="body/regular/md" className="block text-secondary">
           {example.description}
         </Text>
+        {example.tags && (
+          <ul className="m-0 mt-1 flex list-none flex-wrap gap-2 p-0" aria-label="Topics">
+            {example.tags.map((tag) => (
+              <li key={tag}>
+                {/* A label, not a control: rendered as a span so it can sit inside the card link. */}
+                <Tag asChild readOnly kind="outline" color="gray">
+                  <span>{tag}</span>
+                </Tag>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   )

@@ -16,6 +16,7 @@ export const nationalCyberDefense: Example = {
   id: 'national-cyber-defense',
   title: 'National Cyber-Defense',
   description: 'Analyze threats and diagnose vulnerabilities.',
+  tags: ['Cybersecurity'],
   cardImage,
   cardImageBackground: '#151b2f',
   partnerLogos: [

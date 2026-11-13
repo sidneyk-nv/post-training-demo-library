@@ -16,6 +16,7 @@ export const financialResearch: Example = {
   id: 'financial-research',
   title: 'Financial Research',
   description: 'Turn rigorous financial research into analyst reports.',
+  tags: ['Content'],
   cardImage,
   partnerLogos: [
     { src: samayaMark, width: 16, height: 16, alt: '' },

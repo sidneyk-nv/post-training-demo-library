@@ -14,6 +14,7 @@ export const patientInteraction: Example = {
   id: 'patient-interaction',
   title: 'Patient Interaction',
   description: 'Help patients with refills, symptoms and appointments.',
+  tags: ['Human-AI Interaction', 'Bias'],
   // NeMo Gym / NeMo RL architecture from the GTC Healthcare demo, letterboxed on its own background.
   cardImage,
   cardImageBackground: '#080a09',
