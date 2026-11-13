@@ -47,7 +47,7 @@ export const refill = {
   } satisfies Side,
   after: {
     heading: 'After Post-Training',
-    caption: 'Asks. Waits. Then submits.',
+    caption: 'Asks safety questions',
     turns: [
       {
         role: 'patient',
