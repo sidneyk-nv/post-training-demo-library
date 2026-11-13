@@ -54,6 +54,7 @@ body {
 
 /* Growing card: switch to the large view right away, then zoom it up. */
 html[data-vt-to="eval"]::view-transition-old(stage-eval),
+html[data-vt-to="mid-training"]::view-transition-old(stage-mid-training),
 html[data-vt-to="sft"]::view-transition-old(stage-sft),
 html[data-vt-to="cft"]::view-transition-old(stage-cft),
 html[data-vt-to="rl"]::view-transition-old(stage-rl),
@@ -61,6 +62,7 @@ html[data-vt-to="eval-2"]::view-transition-old(stage-eval-2) {
   animation: vt-fade-out 120ms ease-out both;
 }
 html[data-vt-to="eval"]::view-transition-new(stage-eval),
+html[data-vt-to="mid-training"]::view-transition-new(stage-mid-training),
 html[data-vt-to="sft"]::view-transition-new(stage-sft),
 html[data-vt-to="cft"]::view-transition-new(stage-cft),
 html[data-vt-to="rl"]::view-transition-new(stage-rl),
@@ -69,6 +71,7 @@ html[data-vt-to="eval-2"]::view-transition-new(stage-eval-2) {
 }
 /* Shrinking card: keep the large view while it zooms down, then switch to the small card. */
 html[data-vt-from="eval"]::view-transition-old(stage-eval),
+html[data-vt-from="mid-training"]::view-transition-old(stage-mid-training),
 html[data-vt-from="sft"]::view-transition-old(stage-sft),
 html[data-vt-from="cft"]::view-transition-old(stage-cft),
 html[data-vt-from="rl"]::view-transition-old(stage-rl),
@@ -76,6 +79,7 @@ html[data-vt-from="eval-2"]::view-transition-old(stage-eval-2) {
   animation: vt-fade-out 120ms ease-out 230ms both;
 }
 html[data-vt-from="eval"]::view-transition-new(stage-eval),
+html[data-vt-from="mid-training"]::view-transition-new(stage-mid-training),
 html[data-vt-from="sft"]::view-transition-new(stage-sft),
 html[data-vt-from="cft"]::view-transition-new(stage-cft),
 html[data-vt-from="rl"]::view-transition-new(stage-rl),

@@ -5,7 +5,7 @@ import { SftDiagram } from './sft'
 import { RlDiagram } from './rl'
 
 /** Every step a flow can show. The shared flow is eval, sft, rl, eval-2; not all items are used in every use case. */
-export const stageIds = ['eval', 'sft', 'rl', 'cft', 'eval-2'] as const
+export const stageIds = ['eval', 'mid-training', 'sft', 'rl', 'cft', 'eval-2'] as const
 export type StageId = (typeof stageIds)[number]
 
 /** A stage's diagram. Use cases can swap in their own (see `Example.diagrams`). */

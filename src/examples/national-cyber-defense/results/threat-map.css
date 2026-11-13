@@ -1,0 +1,85 @@
+/* Threat map (National Cyber-Defense Results tab). Neutral grays on black, with
+   Kaizen accent tokens: red for targeted countries, yellow for infrastructure. */
+.threat-map {
+  --tm-target: var(--text-color-accent-red);
+  --tm-infra: var(--text-color-accent-yellow);
+}
+
+.tm-country {
+  fill: #2b2b2b;
+  stroke: #000;
+  stroke-width: 0.4;
+  transition: fill 0.6s ease;
+}
+.tm-country.hit {
+  fill: var(--tm-target);
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--tm-target) 50%, transparent));
+}
+
+/* Relationships inferred from reports, not attack paths. */
+.tm-link {
+  stroke: #d9d9d9;
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.7;
+  animation: tm-fade 450ms ease-out both;
+}
+
+.tm-actor {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
+  animation: tm-fade 350ms ease-out both;
+}
+.tm-actor-halo { fill: rgba(0, 0, 0, 0.78); stroke: rgba(255, 255, 255, 0.45); stroke-width: 1; }
+.tm-actor-body { fill: url(#tm-actor-cloak); stroke: #bfbfbf; stroke-width: 1; }
+.tm-actor-hood { fill: url(#tm-actor-hood); stroke: #e6e6e6; stroke-width: 1.15; }
+.tm-actor-face { fill: #050505; stroke: rgba(255, 255, 255, 0.35); stroke-width: 0.8; }
+.tm-actor-eyes { fill: none; stroke: #f2f2f2; stroke-width: 1.8; stroke-linecap: round; }
+.tm-actor-laptop { fill: #1a1a1a; stroke: #e6e6e6; stroke-width: 1.2; stroke-linejoin: round; }
+.tm-actor-code { fill: none; stroke: #bfbfbf; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.tm-actor-label {
+  fill: #ededed;
+  font-family: 'NVIDIA Sans', sans-serif;
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.65px;
+  text-anchor: middle;
+}
+
+/* Critical-infrastructure markers: a diamond that pops in, with a pulsing ring. */
+.tm-beacon {
+  fill: var(--tm-infra);
+  stroke: #000;
+  stroke-width: 1;
+  filter: drop-shadow(0 0 4px var(--tm-infra));
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tm-pop 350ms ease-out both;
+}
+.tm-beacon-ring {
+  fill: none;
+  stroke: var(--tm-infra);
+  stroke-width: 1.4;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tm-pulse 1.6s ease-out infinite;
+}
+.tm-infra-text { color: var(--tm-infra); }
+
+/* The scan line sweeps across the map once per stage (720 = map width, 90 = sweep width). */
+.tm-sweep { animation: tm-sweep 2.4s linear both; }
+
+.tm-key-target { width: 9px; height: 9px; border-radius: 2px; background: var(--tm-target); }
+.tm-key-infra { width: 8px; height: 8px; border-radius: 1.5px; background: var(--tm-infra); transform: rotate(45deg); }
+
+@keyframes tm-fade { from { opacity: 0; } }
+@keyframes tm-pop { from { opacity: 0; transform: scale(0); } }
+@keyframes tm-pulse { from { transform: scale(0.6); opacity: 0.9; } to { transform: scale(3.2); opacity: 0; } }
+@keyframes tm-sweep { from { transform: translateX(0); } to { transform: translateX(810px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-link, .tm-actor, .tm-beacon, .tm-sweep { animation: none; }
+  .tm-beacon-ring { display: none; }
+  .tm-country { transition: none; }
+}
